@@ -1,0 +1,180 @@
+<div class="inforp-subsanacion">
+    <div class="titulo-secundario title-candsub">
+        <i class="icon fa fa-edit"></i>
+        <div>
+            <h4>Información de la candidatura</h4>
+            <p>Modifique los espacios donde requiera hacer cambios.</p>
+        </div>
+    </div>
+    <!-- Ahora formulario para agregar informacion del nuevo candidato -->
+    <div class="form-estilo row form-candsub">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label">Última Modificación por: <span class="tx-danger">*</span></label>
+                <div class="subsanacionPM">Oscar Morales</div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label">Fecha de Última Modificación:  <span class="tx-danger">*</span></label>
+                <div class="subsanacionUM">17/09/2017</div>
+            </div>
+        </div>
+        <!-- Segunda fila -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Nombre(s) <span class="tx-danger">*</span></label>
+                <input class="form-control" type="text" id="candidato_nombre-rp" onkeypress="return  restriccionNombre(event)">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Apellido Paterno <span class="tx-danger">*</span></label>
+                <input class="form-control" type="text" id="candidato_ap_paterno-rp" onkeypress="return  restriccionNombre(event)">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Apellido Materno <span class="tx-danger">*</span></label>
+                <input class="form-control" type="text" id="candidato_ap_materno-rp" onkeypress="return  restriccionNombre(event)">
+            </div>
+        </div>
+        <!-- Tercera fila -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Tipo de Elección <span class="tx-danger">*</span></label>
+                <div class="subsanacionTipoCandidatura"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Partido Político <span class="tx-danger">*</span></label>
+                <div id="sub-pp-rp"></div>
+            </div>
+        </div>
+
+        <div class="col-md-4 candidato_distrito-rp">
+            <div class="form-group">
+                <label class="form-control-label">Distrito <span class="tx-danger">*</span></label>
+                <div id="candidato_distrito-rp"></div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 prelacion">
+            <div class="form-group">
+                <label class="form-control-label">Prelación <span class="tx-danger">*</span></label>
+                <select class="form-control" id="prelacion">
+                    <option value="">Selecciona una opción</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+        </div>
+        <!-- Cuarta fila -->
+        <div class="col-md-4 sub-tc-rp">
+            <div class="form-group">
+                <label class="form-control-label">Tipo de Candidatura</label>
+                <div id="sub-tc-rp"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Fecha de nacimiento <span class="tx-danger">*</span></label>
+                <input class="form-control" type="date" id="candidato_fec_nacimiento-rp" max="2000-02-27">
+            </div>
+        </div>
+        <!-- Quinta fila   -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Género <span class="tx-danger">*</span></label>
+                <select class="form-control" id="candidato_genero-rp">
+                    <option value="">Selecciona una opción</option>
+                    <option value="MASCULINO">Masculino</option>
+                    <option value="FEMENINO">Femenino</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Clave de Elector <span class="tx-danger">*</span></label>
+                <input class="form-control" maxlength="18" minlength="18" type="text" id="candidato_clave_elector-rp" onkeypress="return  restriccion(event)">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">CURP <span class="tx-danger">*</span> </label>
+                <input class="form-control" maxlength="18" minlength="18" type="text" placeholder="MECC020123HDFNRR04" id="candidato_curp-rp" onkeypress="return  restriccion(event)">
+            </div>
+        </div>
+
+        <!--inicio de nuevo campos-->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">NÚMERO DE EMISIÓN <span class="tx-danger">*</span> </label>
+                <input class="form-control" maxlength="4" minlength="1" type="text" placeholder="Número de emisión de la credencial" id="candidato_num_emision-rp" onkeypress="return  soloNumeros(event)">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">OCR<span class="tx-danger">*</span> </label>
+                <input class="form-control" maxlength="13" minlength="1" type="text" placeholder="OCR" id="candidato_ocr-rp" onkeypress="return soloNumeros(event)">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">CIC<span class="tx-danger"></span> </label>
+                <input class="form-control" maxlength="15" minlength="15" type="text" placeholder="Código de identificación de Credencial para Votar" id="candidato_cic-rp">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">SECCIÓN<span class="tx-danger">*</span> </label>
+                <input class="form-control" maxlength="4" minlength="1" type="text" placeholder="Sección" id="candidato_seccion-rp" onkeypress="return soloNumeros(event)">
+            </div>
+        </div>
+
+        <!--fin de nuevo campos-->
+
+        <!-- Septima fila -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Tiempo de residencia <span class="tx-danger">*</span></label>
+                <div class="input-group-prepend">
+                    <input class="form-control" type="text" id="candidato_tiempo_residencia-rp" aria-describedby="inputGroupPrepend" maxlength="2" minlength="1" onkeypress="return  restriccion(event)">
+                    <span class="input-group-text" id="inputGroupPrepend">Años</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label class="form-control-label">Sobrenombre </label>
+                <input class="form-control" type="text" name="" value="" id="candidato_sobrenombre-rp" onkeypress="return  restriccionNombre(event)">
+            </div>
+        </div>
+        <div class="col-md-4 email_rp">
+            <label class="form-control-label">Correo Electrónico</label>
+            <input class="form-control" type="email" id="emailrp" name="" size="30">
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="justify-content-center btn-formulario">
+            <button type="button" name="button" class="btn btn-secondary" id="subsanacion-cancelar">Cancelar</button>
+            <button type="button" name="button" class="btn btn-primary btn-subsanaciondocs">Continuar</button>
+        </div>
+    </div>
+    <!-- formulario subsanacion -->
+    <input type="text" id="id_reg" class="d-none" value="">
+    <input type="text" id="id_doc" class="d-none" value="">
+    <input type="text" id="id_tipo_candidatura" class="d-none" value="">
+
+</div>
