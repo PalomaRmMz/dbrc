@@ -212,7 +212,7 @@ input[type="color"]:focus,
 }
 
 .navbar .sidebar {
-    position: relative;
+    position: absolute;
     /* margin: 0 auto; */
     /* max-width: 1280px; */
     padding: 0 10px 0 5px;
@@ -221,6 +221,7 @@ input[type="color"]:focus,
     font-weight: bolder;
     color: #ffffff;
     /* height: calc(100% - 30px); */
+    top: -82px;
 }
 
 .sidebar-nav ul {
