@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistema de Registro 2021</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ed1b64eef4.js" crossorigin="anonymous">
@@ -52,9 +52,9 @@
     </div>
 
     <div class="dashboard">
-        <div class="topbar">
+        <div class="topbar shadow">
             <div class="top-navbar">
-                <div class="topbar-logo"></div>
+                <!-- <div class="topbar-logo"></div> -->
                 <form class="form-search" method="post" id="consul01">
                     <input class="form-control form-control-dark" type="text" name="" id="busqueda"
                         placeholder="&#xF002; Consulta de Registro (Clave de Elector)"
@@ -84,31 +84,36 @@
             </div>
         </div>
         <!-- Barra de menu -->
-        <nav class="navbar navbar-dark sticky-top bg-ite flex-md-nowrap p-0">
+        <nav class="navbar navbar-dark bg-ite flex-md-nowrap p-0" style="width: 250px;">
             <div class="sidebar">
                 <nav class="sidebar-nav active">
+                    <img class="img-fluid mt-3 mb-3" src="assets/img/logoite.png"
+                        alt="Instituto Tlaxcalteca de Elecciones" />
                     <ul class="in">
+                        <div class="sidebar-heading"> REGISTROS</div>
+
                         <li class="menu-item ite-link" data-page="gobernatura" id="menuGobernador">
                             <a>
-                                <i class="fa fa-user-plus" aria-hidden="true"></i><span> Registro Gubernatura</span>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i><span> Gubernatura</span>
                             </a>
                         </li>
                         <li class="menu-item ite-link" data-page="registro" id="menuRegistro">
                             <a>
-                                <i class="fa fa-user-plus" aria-hidden="true"></i><span> Registro Diputaciones</span>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i><span> Diputaciones</span>
                             </a>
                         </li>
                         <li class="menu-item ite-link" data-page="ayuntamiento" id="menuayuntamiento">
                             <a>
-                                <i class="fa fa-user-plus" aria-hidden="true"></i><span> Registro Ayuntamientos</span>
+                                <i class="fa fa-user-plus" aria-hidden="true"></i><span> Ayuntamientos</span>
                             </a>
                         </li>
-                        <li class="menu-item ite-link" data-page="comunidad" id="menucomunidad">
+                        <li class="menu-item ite-link mb-3" data-page="comunidad" id="menucomunidad">
                             <a>
-                                <i class="fa fa-user-plus" aria-hidden="true"></i><span> Registro de Presidencias de
+                                <i class="fa fa-user-plus" aria-hidden="true"></i><span> Presidencias de
                                     Comunidad</span>
                             </a>
                         </li>
+                        <div class="sidebar-heading"> OPERACIONES</div>
                         <li class="menu-item ite-link" data-page="subsanacion" id="menuSubsanacion">
                             <a>
                                 <i class="fa fa-pencil" aria-hidden="true"></i><span> Subsanación</span>
@@ -122,6 +127,11 @@
                         <li class="menu-item ite-link" data-page="cancelacion" id="menuCancelacion">
                             <a>
                                 <i class="fa fa-times-circle-o" aria-hidden="true"></i><span> Renuncia</span>
+                            </a>
+                        </li>
+                        <li class="menu-item ite-link" data-page="reportes" id="menuReportes">
+                            <a>
+                                <i class="fa fa-print" aria-hidden="true"></i><span> Reportes</span>
                             </a>
                         </li>
                         <li class="menu-item ite-link" data-page="reportes" id="menuReportes">

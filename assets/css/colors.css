@@ -98,6 +98,10 @@ input[type="color"]:focus,
     max-width: 750px;
 }
 
+.navbar {
+    top: 0;
+}
+
 .form-control-dark::placeholder {
     color: #fff;
 }
@@ -126,19 +130,23 @@ input[type="color"]:focus,
 }
 
 .topbar {
-    width: 100%;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-    background: #ce788e;
+    width: 85.2%;
+    /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); */
+    background: #dadada;
+    margin-left: 250px;
+    position: absolute;
+    padding: 0 20px 0 20px;
 }
 
 .top-navbar {
     min-height: 70px;
+    /*
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0px 0px 0px 16px;
+    padding: 0px 0px 0px 16px; */
 }
 
-.topbar-logo {
+/* .topbar-logo {
     height: 70px;
     width: 10%;
     background-image: url(../img/logoite-white.png);
@@ -146,7 +154,7 @@ input[type="color"]:focus,
     background-size: contain;
     background-position: center;
     display: inline-flex;
-}
+} */
 
 .drop-menu {
     position: relative;
@@ -173,7 +181,6 @@ input[type="color"]:focus,
     border-top: 0;
     margin-top: 1px;
     box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.16);
-    z-index: 1500;
     float: left;
     min-width: 10rem;
     font-size: 0.875rem;
@@ -206,10 +213,14 @@ input[type="color"]:focus,
 
 .navbar .sidebar {
     position: relative;
-    margin: 0 auto;
-    max-width: 1280px;
-    padding: 0 15px;
-    height: calc(100% - 30px);
+    /* margin: 0 auto; */
+    /* max-width: 1280px; */
+    padding: 0 10px 0 5px;
+    height: 100vh;
+    background-color: #b15f73;
+    font-weight: bolder;
+    color: #ffffff;
+    /* height: calc(100% - 30px); */
 }
 
 .sidebar-nav ul {
@@ -219,8 +230,8 @@ input[type="color"]:focus,
 
 .menu-item {
     position: relative;
-    margin-bottom: 0px: auto;
-    padding: 11px 15px;
+    margin: 3px 0;
+    padding: 5px 15px;
     float: left;
     list-style: none;
     outline: none;
@@ -246,17 +257,16 @@ input[type="color"]:focus,
 }
 
 .contenido-pagina {
-    padding: 25px 15px;
-    width: 100%;
-    max-width: 1335px;
-    margin: 0 auto;
-    position: relative;
-    margin-top: 30px;
+    width: 80%;
+    position: absolute;
+    top: 92px;
+    left: 269px;
+    height: 88vh;
+    padding: 15px;
+    border-radius: 10px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21);
-    border-radius: 3px;
-    background-color: white;
-    max-height: 80vh;
-    overflow-y: scroll;
+    background-color: #f2f2f2;
+    overflow-y: auto;
     display: none;
 }
 
@@ -281,7 +291,7 @@ input[type="color"]:focus,
 }
 
 .menuactivo {
-    display: block!important;
+    display: block !important;
 }
 
 .envol-div {
@@ -326,7 +336,7 @@ input[type="color"]:focus,
 }
 
 .titulo-secundario {
-    margin: 30px 0px!important;
+    margin: 30px 0px !important;
 }
 
 .form-sust {
@@ -536,7 +546,7 @@ input[type="color"]:focus,
 }
 
 .historial .envol-div {
-    padding: 0!important;
+    padding: 0 !important;
 }
 
 .historial h2 {
@@ -609,7 +619,7 @@ input[type="color"]:focus,
 }
 
 .user-action label {
-    margin-bottom: 0!important;
+    margin-bottom: 0 !important;
 }
 
 .online {
@@ -660,7 +670,7 @@ input[type="color"]:focus,
 }
 
 .form-control-plaintext {
-    cursor: pointer!important;
+    cursor: pointer !important;
 }
 
 .noti-error {
@@ -731,17 +741,17 @@ input[type="color"]:focus,
 }
 
 .badge-Inactivo {
-    color: #fff!important;
+    color: #fff !important;
     background-color: #6c757d;
 }
 
 .badge-Activo {
-    color: #fff!important;
+    color: #fff !important;
     background-color: #28a745;
 }
 
 .badge-Suspendido {
-    color: #292929!important;
+    color: #292929 !important;
     background-color: #ffc107;
 }
 
@@ -753,7 +763,7 @@ input[type="color"]:focus,
 /* .marg-form form{ margin-top: 20px; } */
 
 .marg-form .form-check-label {
-    margin-bottom: 0px!important;
+    margin-bottom: 0px !important;
 }
 
 .envol-div .nav-link {
@@ -818,7 +828,7 @@ input[type="color"]:focus,
 /* Nuevos añadidos 9 de Marzo de 2018 */
 
 .swal-text {
-    text-align: center!important;
+    text-align: center !important;
 }
 
 .inforp-subsanacion {
