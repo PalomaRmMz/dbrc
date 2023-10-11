@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sistema de Registro 2021</title>
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ed1b64eef4.js" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="assets/css/colors.css">
@@ -55,7 +55,6 @@
         <div class="topbar">
             <div class="top-navbar">
                 <div class="topbar-logo"></div>
-                <!-- utiliza el evento submit utilizando la clase del formulario -->
                 <form class="form-search" method="post" id="consul01">
                     <input class="form-control form-control-dark" type="text" name="" id="busqueda"
                         placeholder="&#xF002; Consulta de Registro (Clave de Elector)"
@@ -2768,7 +2767,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
 
-    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/sweetalert/sweetalert.min.js"></script>
     <!-- -->
     <script>
