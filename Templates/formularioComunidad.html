@@ -1,0 +1,677 @@
+<div class="envol-div">
+    <div class="titulo-pagina reg-titulo">
+        <i class="icon fa fa-user-plus"></i>
+        <div>
+            <h4>Añadir nueva candidatura para comunidad</h4>
+            <p>Agregue la información solicitada para añadir una candidatura.</p>
+        </div>
+    </div>
+
+
+    <form action="" method="post" id="reg-comunidad01" class="form-estilo row adduser-form">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label">MUNICIPIO<span class="tx-danger">*</span></label>
+                <select required class="form-control" id="reg-c-municipios">
+                    <option value=''>Selecciona una opción</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label">Comunidad <span class="tx-danger">*</span></label>
+                <select class="form-control" id="reg-m-comunidad" disabled>
+                    <option value="">Selecciona una opción</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-control-label">Partido Político / Coalición / Independiente<span class="tx-danger">*</span></label>
+                <select required class="form-control" id="reg-c-partidos-politicos" disabled>
+                    <option value=''>Selecciona una opción</option>
+                </select>
+            </div>
+        </div>
+    </form>
+
+    <!-- fin -->
+
+
+
+    <div id="rpcContainer">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active btnPro" id="pills-propietario-tab" data-toggle="pill" href="#pills-propietario-comunidad" role="tab" aria-controls="pills-home" aria-selected="true">Propietario/a</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btnSup" id="pills-suplente-tab" data-toggle="pill" href="#pills-suplente-comunidad" role="tab" aria-controls="pills-profile" aria-selected="false">Suplente</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-propietario-comunidad" role="tabpanel" aria-labelledby="pills-propietario-tab">
+
+                <div class="row reg-m-pro">
+                    <!-- Propietario -->
+                    <div class="split-form">
+
+                        <form id="registroPropietarioComunidad" method="post">
+
+                            <div class="marg-form">
+                                <h5 class="titulo"><i class="icon fa fa-user"></i> Propietario </h5>
+                                <div class="form-group">
+                                    <label class="form-control-label">Nombre(s)<span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" id="reg-c-nombre" onkeypress="return  restriccionNombre(event)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Apellido Paterno <span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" id=reg-c-ap onkeypress="return  restriccionNombre(event)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Apellido Materno <span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" id="reg-c-pro-am" onkeypress="return  restriccionNombre(event)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Fecha de Nacimiento <span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="date" id="reg-c-pro-fecn" min="1950-01-01" max="2003-02-27" maxlength="8">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Género <span class="tx-danger">*</span></label>
+                                    <select class="form-control rdGeneroP" id="reg-c-pro-gen">
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="MASCULINO">Masculino</option>
+                                        <option value="FEMENINO">Femenino</option>
+                                    </select>
+
+                                    <!-- <button type="button" disabled class="btn btn-primary mt-2" id="validarPC" onClick="validarSexo('PC')">Validar sexo</button> -->
+
+                                </div>
+                                <div class="form-check" style="display: none;" id="boxComP">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="checkComP">
+                                    <label class="form-check-label form-control-label">
+                                     ¿Desea recibir informacion acerca de la paridad de genero?
+                                </label>
+                                </div>
+                                <div class="form-group" id="CemailComP" style="display: none;">
+                                    <label class="form-control-label">Correo Electrónico</label>
+                                    <input class="form-control" type="email" id="IemailComP" name="IemailComP" placeholder="usuario@dominio.com" size="30">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Lugar de Nacimiento <span class="tx-danger">*</span></label>
+                                    <select required class="form-control estados" id="reg-c-pro-sitenac">
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Clave de Elector<span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" maxlength="18" minlength="18" onkeypress="return  restriccion(event)" placeholder="ABCD123456FDCVGBHC" id="reg-c-pro-claveElector">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">CURP<span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" maxlength="18" minlength="18" placeholder="MECC020123HDFNRR04" id="reg-c-pro-curp" onkeypress="return  restriccion(event)">
+                                </div>
+
+
+
+
+
+
+                                <!--nuevo campos ha agregar-->
+                                <div class="form-group">
+                                    <label class="form-control-label">Número de emisión de la credencial para votar<span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control tiempo_residencia" id="reg-c-pro-num_emision" name="reg-num_emision" placeholder="Número de emisión de la credencial" onkeypress="return  soloNumeros(event)" maxlength="4" minlength="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">OCR<span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control tiempo_residencia" id="reg-c-pro-ocr" name="OCR" placeholder="OCR" onkeypress="return soloNumeros(event)" maxlength="13" minlength="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">CIC (Código de Identificación de Credencial para Votar)<span class="tx-danger"></span></label>
+                                    <input class="form-control" name="CIC" type="text" maxlength="15" minlength="15" placeholder="Código de identificación de Credencial para Votar " id="reg-c-pro-CIC">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">Sección<span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control tiempo_residencia" id="reg-c-pro-seccion" name="seccion" placeholder="Sección" onkeypress="return soloNumeros(event)" maxlength="4" minlength="1">
+                                </div>
+                                <!--fin de los nuevos campos-->
+
+
+
+
+
+
+
+
+                                <div class="form-group">
+                                    <label class="form-control-label">Tiempo de Residencia <span class="tx-danger">*</span></label>
+                                    <div class="input-group">
+                                        <label class="form-control-label d-none">Tiempo de Residencia <span class="tx-danger">*</span></label>
+                                        <input type="text" class="form-control tiempo_residencia" id="reg-c-pro-timeres" name="tiempo" onkeypress="return  restriccionTime(event)" maxlength="2" minlength="1">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">AÑOS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Sobrenombre</label>
+                                    <input class="form-control" type="text" id="reg-c-pro-sobrenombre" onkeypress="return  restriccionNombre(event)">
+                                </div>
+
+                                <div class="form-group fadeIn">
+                                    <input type="checkbox" id="cboPoliticaCP">
+                                    <label for="cboPoliticaCP" style="color:#868ba1;font-size: 16px;">He leído y acepto la  <a href="#">
+                                        Política de Privacidad <span class="tx-danger">*</span>
+                                    </a></label>
+                                </div>
+                            </div>
+                            <div class="justify-content-start btn-formulario">
+                                <button type="button" name="button" class="btn btn-secondary" id="cancelCandidaturaC">Cancelar</button>
+                                <button type="button" name="button" class="btn btn-primary" id="reg-comunidad-pro">Registrar Propietario</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Documentación del propietario  -->
+                    <div class="split-form">
+                        <div class="marg-form">
+                            <h5 class="titulo"><i class="icon fa fa-file"></i> Documentación del Propietario</h5>
+                            <form method="POST" id="docPropietarioComunidad">
+
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-snr">
+                                    <label class="form-check-label form-control-label" for="pro-c-snr">
+                                         Documento emitido por el SNR del INE.
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-regcan">
+                                    <label class="form-check-label form-control-label" for="pro-c-regcan">
+                                     Solicitud de Registro de Candidatura.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-cred">
+                                    <label class="form-check-label form-control-label" for="pro-c-cred">
+                                     Credencial para votar vigente.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-actnac">
+                                    <label class="form-check-label form-control-label" for="pro-c-actnac">
+                                         Copia certificada del Acta de Nacimiento.
+                                    </label>
+                                </div>
+
+                                <!-- <div class="form-check">
+                                    <label class="form-check-label form-control-label">Copia certificada del Acta de Nacimiento del padre o madre Tlaxcalteca</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cProCopiaMPT" id="c-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="c-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cProCopiaMPT" id="c-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="c-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cProCopiaMPT" id="c-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="c-can3">No aplica</label>
+                                    </div>
+                                </div> -->
+
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-radicacion">
+                                    <label class="form-check-label form-control-label" for="pro-c-radicacion">
+                                        Constancia de Radicación.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-aceptacion">
+                                    <label class="form-check-label form-control-label" for="pro-c-aceptacion">
+                                        Constancia de aceptación de la postulación.
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label form-control-label">Constancia de separación del cargo de la función pública.</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input doc-checkbox" type="radio" name="cProSeparacionCargo" id="c-sepRadio1" value="SI">
+                                        <label class="form-check-label form-control-label" for="c-sepRadio1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input doc-checkbox" type="radio" name="cProSeparacionCargo" id="c-sepRadio2" value="NO">
+                                        <label class="form-check-label form-control-label" for="c-sepRadio2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input doc-checkbox" type="radio" name="cProSeparacionCargo" id="c-sepRadio3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="c-sepRadio3">No aplica</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-inhabilitado">
+                                    <label class="form-check-label form-control-label" for="pro-c-inhabilitado">
+                                        Escrito bajo protesta de decir verdad, que no se encuentra inhabilitado para ocupar un cargo público y que no se cuenta con antecedentes penales.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-antpen">
+                                    <label class="form-check-label form-control-label" for="pro-c-antpen">
+                                      Carta de antecendentes no penales.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-me">
+                                    <label class="form-check-label form-control-label" for="pro-c-me">
+                                        Manifestación de partido político.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-ce">
+                                    <label class="form-check-label form-control-label" for="pro-c-ce">
+                                        Informe de capacidad económica.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="pro-c-cp">
+                                    <label class="form-check-label form-control-label" for="pro-c-cp">
+                                        Cédula de identificación fiscal.
+                                    </label>
+                                </div>
+
+
+
+                                <!--cambios de ultima hora-->
+
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="doc-carta-3-cp">
+                                    <label class="form-check-label form-control-label" for="doc-carta-3">
+                                        CARTA 3 DE 3
+                                    </label>
+                                </div>
+
+                                <!-- <div class="form-check">
+                                    <label class="form-check-label form-control-label">CARTA REELECCIÓN</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cartaEleccion-cp" id="cartaEleccion-cp-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="cartaEleccion-cp-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cartaEleccion-cp" id="cartaEleccion-cp-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="cartaEleccion-cp-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cartaEleccion-cp" id="cartaEleccion-cp-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="cartaEleccion-cp-can3">No aplica</label>
+                                    </div>
+                                </div> -->
+
+
+                                <!-- <div class="form-check">
+                                    <label class="form-check-label form-control-label">CONSTANCIA DE AUTORIZACIÓN DEL ÓRGANO PARTIDISTA EN CASO DE RELECCIÓN</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="constAutOrganoPartidista-cp" id="constAutOrganoPartidista-cp-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="constAutOrganoPartidista-cp-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="constAutOrganoPartidista-cp" id="constAutOrganoPartidista-cp-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="constAutOrganoPartidista-cp-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="constAutOrganoPartidista-cp" id="constAutOrganoPartidista-cp-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="constAutOrganoPartidista-cp-can3">No aplica</label>
+                                    </div>
+                                </div> -->
+
+                                <!-- <div class="form-check">
+                                    <label class="form-check-label form-control-label">MANIFESTACIÓN DE AUTOADSCRIPCIÓN INDÍGENA</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="manifestacionIndigena-cp" id="manifestacionIndigena-cp-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="manifestacionIndigena-cp-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="manifestacionIndigena-cp" id="manifestacionIndigena-cp-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="manifestacionIndigena-cp-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="manifestacionIndigena-cp" id="manifestacionIndigena-cp-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="manifestacionIndigena-cp-can3">No aplica</label>
+                                    </div>
+                                </div> -->
+
+<!-- 
+                                <div class="form-check">
+                                    <label class="form-check-label form-control-label">CONSTANCIAS QUE ACREDITEN EL VÍNCULO COMUNITARIO</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="consVinculoComuni-cp" id="consVinculoComuni-cp-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="consVinculoComuni-cp-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="consVinculoComuni-cp" id="consVinculoComuni-cp-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="consVinculoComuni-cs-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="consVinculoComuni-cp" id="consVinculoComuni-cp-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="consVinculoComuni-cp-can3">No aplica</label>
+                                    </div>
+                                </div> -->
+
+                                <!--Fin de cambios de ultima hora-->
+
+
+                            </form>
+                        </div>
+                        <!-- marg-form -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+
+
+            <div class="tab-pane fade" id="pills-suplente-comunidad" role="tabpanel" aria-labelledby="pills-suplente-tab">
+                <div class="row reg-m-sup">
+                    <!-- Suplente -->
+                    <div class="split-form">
+                        <form method="post" id="registroSuplenteComunidad">
+                            <div class="marg-form">
+
+                                <h5 class="titulo"><i class="icon fa fa-user"></i> Suplente</h5>
+                                <div class="form-group">
+                                    <label class="form-control-label banderin">Nombre(s)<span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" id="reg-c-sup-nombre" onkeypress="return  restriccionNombre(event)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label banderin">Apellido Paterno <span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" id="reg-c-sup-ap" onkeypress="return  restriccionNombre(event)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label banderin">Apellido Materno <span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" id="reg-c-sup-am" onkeypress="return  restriccionNombre(event)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Fecha de Nacimiento <span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="date" id="reg-c-sup-fecn" min="1950-01-01" max="2003-02-27" maxlength="8">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Género <span class="tx-danger">*</span></label>
+                                    <select class="form-control rdGeneroS" id="reg-c-sup-gen">
+                                        
+                                        <option value="">Selecciona una opción</option>
+                                        <option value="MASCULINO">Masculino</option>
+                                        <option value="FEMENINO">Femenino</option>
+                                    </select>
+                                    <!--<button type="button" disabled class="btn btn-primary mt-2" id="validarSC" onClick="validarSexo('SC')">Validar sexo</button>
+ --></div>
+
+                                <div class="form-check" style="display: none;" id="boxComS">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="checkComS">
+                                    <label class="form-check-label form-control-label">
+     ¿Desea recibir informacion acerca de la paridad de genero?
+</label>
+                                </div>
+                                <div class="form-group" id="CemailComS" style="display: none;">
+                                    <label class="form-control-label">Correo Electrónico</label>
+                                    <input class="form-control" type="email" id="IemailComuSup" name="email" placeholder="usuario@dominio.com" size="30">
+                                </div>
+
+                                <div class="form-group ">
+                                    <label class="form-control-label">Lugar de Nacimiento <span class="tx-danger">*</span></label>
+                                    <select required class="form-control estado estados" id="reg-c-sup-sitenac"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Clave de Elector <span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" maxlength="18" minlength="18" onkeypress="return  restriccion(event)" placeholder="ABCD123456FDCVGBHC" id="reg-c-sup-claveElector">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">CURP <span class="tx-danger">*</span></label>
+                                    <input class="form-control" type="text" maxlength="18" minlength="18" placeholder="MECC020123HDFNRR04" id="reg-c-sup-curp" onkeypress="return  restriccion(event)">
+                                </div>
+
+
+                                <!--nuevo campos ha agregar-->
+                                <div class="form-group">
+                                    <label class="form-control-label">Número de emisión de la credencial para votar<span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control tiempo_residencia" id="reg-c-sup-num_emision" name="reg-c-sup-num_emision" placeholder="Número de emisión de la credencial" onkeypress="return  soloNumeros(event)" maxlength="4" minlength="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">OCR<span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control tiempo_residencia" id="reg-c-sup-ocr" name="reg-c-sup-ocr" placeholder="OCR" onkeypress="return soloNumeros(event)" maxlength="13" minlength="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">CIC (Código de Identificación de Credencial para Votar)<span class="tx-danger"></span></label>
+                                    <input class="form-control" name="reg-c-sup-CIC" type="text" maxlength="15" minlength="15" placeholder="Código de identificación de Credencial para Votar " id="reg-c-sup-CIC">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">Sección<span class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control tiempo_residencia" id="reg-c-sup-seccion" name="reg-c-sup-seccion" placeholder="Sección" onkeypress="return soloNumeros(event)" maxlength="4" minlength="1">
+                                </div>
+                                <!--fin de los nuevos campos-->
+
+
+                                <div class="form-group">
+                                    <label class="form-control-label">Tiempo de Residencia <span class="tx-danger">*</span></label>
+                                    <div class="input-group">
+                                        <label class="form-control-label d-none">Tiempo de Residencia <span class="tx-danger">*</span></label>
+                                        <input type="text" class="form-control tiempo_residencia" id="reg-c-sup-timeres" name="tiempo" onkeypress="return  restriccionTime(event)" maxlength="2" minlength="1">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">AÑOS</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-label">Sobrenombre</label>
+                                    <input class="form-control" type="text" id="reg-c-sup-sobrenombre" onkeypress="return  restriccionNombre(event)">
+                                </div>
+
+                                <div class="form-group fadeIn">
+                                    <input type="checkbox" id="cboPoliticaCS">
+                                    <label for="cboPoliticaCS" style="color:#868ba1;font-size: 16px;">He leÍdo y acepto la  <a href="#">
+                                        Política de Privacidad <span class="tx-danger">*</span>
+                                    </a></label>
+                                </div>
+                            </div>
+                            <div class="justify-content-center btn-formulario">
+                                <button type="button" name="button" class="btn btn-secondary" id="eraseCandidatura">Cancelar</button>
+                                <button type="button" name="button" class="btn btn-primary" id="reg-comunidad-sup">Registrar Suplente</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Documentación de suplente  -->
+                    <div class="split-form">
+                        <div class="marg-form">
+                            <h5 class="titulo"><i class="icon fa fa-file"></i> Documentación del Suplente</h5>
+                            <form id="docSuplenteComunidad" method="post">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-snr-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-snr-sup">
+                                        Documento emitido por el SNR del INE.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-regcan-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-regcan-sup">
+                                        Solicitud de Registro.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-cred-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-cred-sup">
+                                        Credencial para votar.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-actnac-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-actnac-sup">
+                                        Copia certificada del Acta de Nacimiento.
+                                    </label>
+                                </div>
+                                <!-- <div class="form-check">
+                                    <label class="form-check-label form-control-label">Copia certificada del Acta de Nacimiento del padre o madre Tlaxcalteca</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cCopiaMPTsup" id="c-canS1" value="SI">
+                                        <label class="form-check-label form-control-label" for="m-canS1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cCopiaMPTsup" id="c-canS2" value="NO">
+                                        <label class="form-check-label form-control-label" for="m-canS2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cCopiaMPTsup" id="c-canS3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="m-canS3">No aplica</label>
+                                    </div>
+                                </div> -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-radicacion-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-radicacion-sup">
+                                        Constancia de Radicación.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-aceptacion-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-aceptacion-sup">
+                                        Constancia de aceptación de la postulación.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label form-control-label">Constancia de separación del cargo o la función pública.</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cSeparacionCargoSup" id="c-radioCSFP1" value="SI">
+                                        <label class="form-check-label form-control-label" for="m-radioCSFP2">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cSeparacionCargoSup" id="c-radioCSFP2" value="NO">
+                                        <label class="form-check-label form-control-label" for="m-radioCSFP2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cSeparacionCargoSup" id="c-radioCSFP3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="m-radioCSFP3">No aplica</label>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-inhabilitado-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-inhabilitado-sup">
+                                        Escrito bajo protesta de decir verdad, que no se encuentra inhabilitado para ocupar un cargo público y que no se cuenta con antecedentes penales.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-antpen-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-antpen-sup">
+                                        Constancia de no antecendentes penales.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-me-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-me-sup">
+                                        Manifestación de partido político.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-ce-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-ce-sup">
+                                        Informe de capacidad económica.
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="doc-c-cp-sup">
+                                    <label class="form-check-label form-control-label" for="doc-c-cp-sup">
+                                        Cédula de identificación fiscal.
+                                    </label>
+                                </div>
+
+
+                                <!--cambios de ultima hora-->
+
+                                <div class="form-check">
+                                    <input class="form-check-input doc-checkbox" type="checkbox" id="doc-carta-3-cs">
+                                    <label class="form-check-label form-control-label" for="doc-carta-3">
+                                        CARTA 3 DE 3
+                                    </label>
+                                </div>
+
+                                <!-- <div class="form-check">
+                                    <label class="form-check-label form-control-label">CARTA REELECCIÓN</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cartaEleccion-cs" id="cartaEleccion-cs-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="cartaEleccion-cs-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cartaEleccion-cs" id="cartaEleccion-cs-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="cartaEleccion-cs-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="cartaEleccion-cs" id="cartaEleccion-cs-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="cartaEleccion-cs-can3">No aplica</label>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-check">
+                                    <label class="form-check-label form-control-label">CONSTANCIA DE AUTORIZACIÓN DEL ÓRGANO PARTIDISTA EN CASO DE RELECCIÓN</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="constAutOrganoPartidista-cs" id="constAutOrganoPartidista-cs-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="constAutOrganoPartidista-cs-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="constAutOrganoPartidista-cs" id="constAutOrganoPartidista-cs-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="constAutOrganoPartidista-cs-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="constAutOrganoPartidista-cs" id="constAutOrganoPartidista-cs-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="constAutOrganoPartidista-cs-can3">No aplica</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label form-control-label">MANIFESTACIÓN DE AUTOADSCRIPCIÓN INDÍGENA</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="manifestacionIndigena-cs" id="manifestacionIndigena-cs-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="manifestacionIndigena-cs-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="manifestacionIndigena-cs" id="manifestacionIndigena-cs-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="manifestacionIndigena-cs-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="manifestacionIndigena-cs" id="manifestacionIndigena-cs-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="manifestacionIndigena-cs-can3">No aplica</label>
+                                    </div>
+                                </div> -->
+
+
+                                <!-- <div class="form-check">
+                                    <label class="form-check-label form-control-label">CONSTANCIAS QUE ACREDITEN EL VÍNCULO COMUNITARIO</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name=" " id="consVinculoComuni-cs-can1" value="SI">
+                                        <label class="form-check-label form-control-label" for="consVinculoComuni-as-can1">Si</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="consVinculoComuni-cs" id="consVinculoComuni-cs-can2" value="NO">
+                                        <label class="form-check-label form-control-label" for="consVinculoComuni-cs-can2">No</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="consVinculoComuni-cs" id="consVinculoComuni-cs-can3" value="NO APLICA" checked="checked">
+                                        <label class="form-check-label form-control-label" for="consVinculoComuni-cs-can3">No aplica</label>
+                                    </div>
+                                </div> -->
+
+                                <!--Fin de cambios de ultima hora-->
+
+
+
+                            </form>
+                        </div>
+                        <!-- marg-form -->
+                    </div>
+                </div>
+                <!-- .row -->
+            </div>
+        </div>
+    </div>
+
+</div>
