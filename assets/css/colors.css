@@ -130,7 +130,7 @@ input[type="color"]:focus,
 }
 
 .topbar {
-    width: 85.2%;
+    width: 83.2%;
     /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); */
     background: #dadada;
     margin-left: 250px;
@@ -262,8 +262,8 @@ input[type="color"]:focus,
     position: absolute;
     top: 92px;
     left: 269px;
-    height: 88vh;
-    padding: 15px;
+    height: 86vh;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21);
     background-color: #f2f2f2;
@@ -296,7 +296,7 @@ input[type="color"]:focus,
 }
 
 .envol-div {
-    padding: 60px !important;
+    padding: 30px !important;
 }
 
 .envol-div .titulo-pagina,
