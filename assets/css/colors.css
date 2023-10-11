@@ -498,7 +498,7 @@ input[type="color"]:focus,
     background-color: #dc3545;
 }
 
-.card-body {
+/* .card-body {
     display: flex;
     align-items: center;
 }
@@ -522,7 +522,7 @@ input[type="color"]:focus,
 .card-body h6 {
     font-size: .98rem;
     color: #fff;
-}
+} */
 
 .btn-reporte {
     margin-top: 15px;
@@ -559,10 +559,10 @@ input[type="color"]:focus,
     width: 100%;
 }
 
-.historial .card-body {
+/* .historial .card-body {
     margin: 0 auto !important;
     text-align: center;
-}
+} */
 
 .tarjeta h5 {
     color: #844F80;
@@ -682,9 +682,9 @@ input[type="color"]:focus,
     display: none;
 }
 
-.card-body .form-group p {
+/* .card-body .form-group p {
     margin-top: 1rem;
-}
+} */
 
 .infoc-subsanacion {
     display: none;
