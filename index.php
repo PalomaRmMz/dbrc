@@ -106,11 +106,11 @@
                     <ul class="in">
                         <div class="sidebar-heading"> REGISTROS</div>
 
-                        <li class="menu-item ite-link" data-page="gobernatura" id="menuGobernador">
+                        <!-- <li class="menu-item ite-link" data-page="gobernatura" id="menuGobernador">
                             <a>
                                 <i class="fa fa-user-plus" aria-hidden="true"></i><span> Gubernatura</span>
                             </a>
-                        </li>
+                        </li> -->
                         <li class="menu-item ite-link" data-page="registro" id="menuRegistro">
                             <a>
                                 <i class="fa fa-user-plus" aria-hidden="true"></i><span> Diputaciones</span>
@@ -2122,7 +2122,7 @@
     <!-- modal docs -->
 
     <div class="modal fade" id="modal-docs" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="docs-title"><i class="fa fa-file-o"></i> Documentación</h5>
@@ -2372,15 +2372,14 @@
 
 
     <!-- Modal para editar/añadir usuario -->
-    <!-- Button trigger modal -->
-
-    <!-- Modal -->
     <div class="modal fade" id="modal-adminuser" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar usuario</h1>
+                    <h5 class="modal-title modal-dialog-centered titulo-adminuser" id="modal-adminuser">Agregar usuario
+                    </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                 </div>
                 <div class="modal-body">
                     <form method="post" id="add-user">
@@ -2392,6 +2391,7 @@
                                         onkeypress="return  restriccionNombre(event)">
                                 </div>
                             </div>
+
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label">Apellido Paterno <span
@@ -2400,6 +2400,7 @@
                                         onkeypress="return  restriccionNombre(event)">
                                 </div>
                             </div>
+
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label class="form-control-label">Apellido Materno <span
@@ -2412,6 +2413,20 @@
                                 <div class="form-group">
                                     <label class="form-control-label">Usuario <span class="tx-danger">*</span></label>
                                     <input type="text" class="form-control text-uppercase" id="user-username"
+                                        onkeypress="return  restriccion(event)" maxlength="20" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group d-none fadeIn" id="cboContraseña">
+                                    <label for="cbxCampioPass" style="color:#868ba1;font-size: 16px;">Cambiar
+                                        contraseña</label>
+                                    <input type="checkbox" id="cbxCampioPass">
+                                </div>
+
+                                <div class="form-group" id="passCambio">
+                                    <label class="form-control-label">Contraseña <span
+                                            class="tx-danger">*</span></label>
+                                    <input type="text" class="form-control" id="user-password"
                                         onkeypress="return  restriccion(event)" maxlength="20">
                                 </div>
                             </div>
@@ -2427,97 +2442,16 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group d-none fadeIn" id="cboContraseña">
-                                    <label for="cbxCampioPass" style="color:#868ba1;font-size: 16px;">Cambiar
-                                        contraseña</label>
-                                    <input type="checkbox" id="cbxCampioPass">
-                                </div>
-
-                                <div class="form-group" id="passCambio">
-                                    <label class="form-control-label">Contraseña <span
-                                            class="tx-danger">*</span></label>
-                                    <input type="text" class="form-control text-uppercase" id="user-password"
-                                        onkeypress="return  restriccion(event)" maxlength="20">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                            </div>
                         </div>
-
-
-
                     </form>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer justify-content-center" id="btns-save">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <button type="button" class="btn btn-primary" id="btn_nuevoUsuario">Guardar Cambios</button>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <div class="modal fade" id="modal-adminuser" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title modal-dialog-centered titulo-adminuser" id="modal-adminuser">Agregar usuario
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" id="add-user">
-                        <div class="form-group">
-                            <label class="form-control-label">Nombre(s) <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-name"
-                                onkeypress="return  restriccionNombre(event)">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label">Apellido Paterno <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-app"
-                                onkeypress="return  restriccionNombre(event)">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label">Apellido Materno <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-apm"
-                                onkeypress="return  restriccionNombre(event)">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label">Usuario <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-username"
-                                onkeypress="return  restriccion(event)" maxlength="20">
-                        </div>
-
-                        <div class="form-group d-none fadeIn" id="cboContraseña">
-                            <label for="cbxCampioPass" style="color:#868ba1;font-size: 16px;">Cambiar contraseña</label>
-                            <input type="checkbox" id="cbxCampioPass">
-                        </div>
-
-                        <div class="form-group" id="passCambio">
-                            <label class="form-control-label">Contraseña <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-password"
-                                onkeypress="return  restriccion(event)" maxlength="20">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label">Rol <span class="tx-danger">*</span></label>
-                            <select class="form-control" id="user-rol">
-                                <option value="">Selecciona una opción</option>
-                                <option value="Administrador">Administrador</option>
-                                <option value="Supervisor">Supervisor</option>
-                                <option value="Subsanacion">Subsanación</option>
-                                <option value="Capturista">Capturista</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer justify-content-center" id="btns-save">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" id="btn_nuevoUsuario">Guardar Cambios</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <!-- modal con informacion del usuario -->
     <div class="modal fade" id="modal-candidatura" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

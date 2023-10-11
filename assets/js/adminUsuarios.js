@@ -198,11 +198,7 @@ $(document).ready(function () {
           } else {
             $("#add-user")[0].reset();
             $("#modal-adminuser").modal("hide");
-            swal(
-              "Modificación éxitosa",
-              "El registro se modificó éxitosamente",
-              "success"
-            );
+            swal("Éxito", "Éxito", "success");
             $.listarUsuarios();
           }
         } catch (e) {
