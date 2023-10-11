@@ -52,9 +52,54 @@
     </div>
 
     <div class="dashboard">
-        <div class="topbar shadow">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <ul class="navbar-nav ml-auto">
+
+                <div class="topbar-divider d-none d-sm-block"></div>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        &nbsp;<img class="img-profile rounded-circle" src="../../assets/img/undraw_profile.svg"
+                            alt="Profile Image">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end menu-inside">
+                        <li>
+                            <a class="dropdown-item disabled" href="#">
+                                <span id="nombreCapturista"></span>
+                            </a>
+                        </li>
+
+                        <li class="ite-link" data-page="usuarios" id="menuUsuarios">
+                            <a> <i class="fa fa-users"></i> Usuarios </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw me-2"></i> Settings</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-list fa-sm fa-fw me-2"></i> Activity Log</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="../../configs/logout.php">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>
+                                Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- <div class="topbar shadow">
             <div class="top-navbar">
-                <!-- <div class="topbar-logo"></div> -->
                 <form class="form-search" method="post" id="consul01">
                     <input class="form-control form-control-dark" type="text" name="" id="busqueda"
                         placeholder="&#xF002; Consulta de Registro (Clave de Elector)"
@@ -82,7 +127,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Barra de menu -->
         <nav class="navbar navbar-dark bg-ite flex-md-nowrap p-0" style="width: 250px;">
             <div class="sidebar">
