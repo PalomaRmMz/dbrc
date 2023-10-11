@@ -12,7 +12,8 @@
     </script>
     <link rel="stylesheet" href="assets/css/colors.css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.21/datatables.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.21/datatables.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/admin-pass.js" type="text/javascript"></script>
 
@@ -35,7 +36,8 @@
                     <div class="input-group">
                         <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
                         <input type="password" class="form-control" name="pass" id="pass" required>
-                        <span class="input-group-text" style="cursor: pointer;" onclick="togglePasswordVisibility('pass', 'toggle1')">
+                        <span class="input-group-text" style="cursor: pointer;"
+                            onclick="togglePasswordVisibility('pass', 'toggle1')">
                             <i class="fa-solid fa-eye-slash" id="toggle1"></i>
                         </span>
                     </div>
@@ -50,18 +52,27 @@
     </div>
 
     <div class="dashboard">
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow pe-5">
             <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
             </button>
+
+            <form class="form-search" method="post" id="consul01" style="width: 80%;">
+                <input class="form-control form-control-dark" type="text" name="" id="busqueda"
+                    placeholder="&#xF002; Consulta de Registro (Clave de Elector)"
+                    style="font-family:Arial, FontAwesome" autocomplete="off" maxlength="18" minlength="18">
+                <input class="pass-btn" type="submit">
+            </form>
 
             <ul class="navbar-nav ml-auto">
 
                 <div class="topbar-divider d-none d-sm-block"></div>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        &nbsp;<img class="img-profile rounded-circle" src="../../assets/img/undraw_profile.svg" alt="Profile Image">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        &nbsp;<img class="img-profile rounded-circle" src="assets/img/undraw_profile.svg"
+                            alt="Profile Image">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end menu-inside">
                         <li>
@@ -69,14 +80,9 @@
                                 <span id="nombreCapturista"></span>
                             </a>
                         </li>
-
                         <li class="ite-link" data-page="usuarios" id="menuUsuarios">
                             <a class="dropdown-item">
                                 <i class="fas fa-cogs fa-sm fa-fw me-2"></i> Administrar usuarios</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw me-2"></i> Activity Log</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
@@ -91,41 +97,12 @@
                 </li>
             </ul>
         </nav>
-        <!-- <div class="topbar shadow">
-            <div class="top-navbar">
-                <form class="form-search" method="post" id="consul01">
-                    <input class="form-control form-control-dark" type="text" name="" id="busqueda"
-                        placeholder="&#xF002; Consulta de Registro (Clave de Elector)"
-                        style="font-family:Arial, FontAwesome" autocomplete="off" maxlength="18" minlength="18">
-                    <input class="pass-btn" type="submit">
-                </form>
-                <div class="drop-menu">
-                    <span class="user-registrado dropdown-toggle" id="nombreCapturista">Oscar Morales </span>
-                    <div class="dropdown-menu">
-                        <ul class="menu-inside">
-                            <li class="ite-link" data-page="historial" id="menuHistorial">
-                                <a> <i class="fa fa-history"></i> Historial </a>
-                            </li>
-                            <li class="ite-link" data-page="usuarios" id="menuUsuarios">
-                                <a> <i class="fa fa-users"></i> Usuarios </a>
-                            </li>
-                            <li>
-                                <a data-toggle="modal" data-target="#modal-suspender"> <i class="fa fa-clock-o"></i>
-                                    Suspender </a>
-                            </li>
-                            <li class="ite-link" data-page="exit" id="exit-btn">
-                                <a> <i class="fa fa-times-circle"></i> Salir </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <!-- Barra de menu -->
         <nav id="sidebar-new" class="navbar navbar-dark bg-ite flex-md-nowrap p-0" style="width: 250px;">
             <div class="sidebar">
                 <nav class="sidebar-nav active">
-                    <img class="img-fluid mt-3 mb-3" src="assets/img/logoite.png" alt="Instituto Tlaxcalteca de Elecciones" />
+                    <img class="img-fluid mt-3 mb-3" src="assets/img/logoite.png"
+                        alt="Instituto Tlaxcalteca de Elecciones" />
                     <ul class="in">
                         <div class="sidebar-heading"> REGISTROS</div>
 
@@ -214,7 +191,8 @@
                     <form action="" id="form-prueba" class="form-estilo row adduser-form">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-control-label">Tipo de elección <span class="tx-danger">*</span></label>
+                                <label class="form-control-label">Tipo de elección <span
+                                        class="tx-danger">*</span></label>
                                 <select class="form-control" id="reg-tipoEleccion">
                                     <option value="0">Selecciona una opción</option>
                                 </select>
@@ -230,7 +208,8 @@
                         <!-- Segunda fila -->
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-control-label">Partido Político / Coalición / Independiente<span class="tx-danger">*</span></label>
+                                <label class="form-control-label">Partido Político / Coalición / Independiente<span
+                                        class="tx-danger">*</span></label>
                                 <select required class="form-control" id="reg-partidos-politicos" disabled>
                                 </select>
                             </div>
@@ -238,7 +217,8 @@
                         <!-- otra fila -->
                         <div class="col-md-6" id="area-prelacion">
                             <div class="form-group">
-                                <label class="form-control-label">Orden de prelación <span class="tx-danger">*</span></label>
+                                <label class="form-control-label">Orden de prelación <span
+                                        class="tx-danger">*</span></label>
                                 <select class="form-control" id="reg-prelacion">
                                     <option value="">Selecciona una opción</option>
                                     <option value="01">01</option>
@@ -261,15 +241,19 @@
                 <div id="rdContainer">
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active btnPro" id="pills-propietario-tab" data-toggle="pill" href="#pills-propietario" role="tab" aria-controls="pills-home" aria-selected="true">Propietario/a</a>
+                            <a class="nav-link active btnPro" id="pills-propietario-tab" data-toggle="pill"
+                                href="#pills-propietario" role="tab" aria-controls="pills-home"
+                                aria-selected="true">Propietario/a</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btnSup" id="pills-suplente-tab" data-toggle="pill" href="#pills-suplente" role="tab" aria-controls="pills-profile" aria-selected="false">Suplente</a>
+                            <a class="nav-link btnSup" id="pills-suplente-tab" data-toggle="pill" href="#pills-suplente"
+                                role="tab" aria-controls="pills-profile" aria-selected="false">Suplente</a>
                         </li>
                     </ul>
 
                     <div class="tab-content" id="pills-tabContent">
-                        <div class="tab-pane fade show active" id="pills-propietario" role="tabpanel" aria-labelledby="pills-propietario-tab">
+                        <div class="tab-pane fade show active" id="pills-propietario" role="tabpanel"
+                            aria-labelledby="pills-propietario-tab">
                             <div class="row reg-pro formPro" id="RDPropietario">
                                 <!-- Propietario -->
                                 <div class="split-form">
@@ -277,23 +261,31 @@
                                         <div class="marg-form">
                                             <h5 class="titulo"><i class="icon fa fa-user"></i> Propietario </h5>
                                             <div class="form-group">
-                                                <label class="form-control-label">Nombre(s)<span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="text" id="reg-pro-nombre" onkeypress="return  restriccionNombre(event)">
+                                                <label class="form-control-label">Nombre(s)<span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="text" id="reg-pro-nombre"
+                                                    onkeypress="return  restriccionNombre(event)">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Apellido Paterno<span class="tx-danger"></span></label>
+                                                <label class="form-control-label">Apellido Paterno<span
+                                                        class="tx-danger"></span></label>
                                                 <input class="form-control" type="text" id="reg-pro-ap">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Apellido Materno <span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="text" id="reg-pro-am" onkeypress="return  restriccionNombre(event)">
+                                                <label class="form-control-label">Apellido Materno <span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="text" id="reg-pro-am"
+                                                    onkeypress="return  restriccionNombre(event)">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Fecha de Nacimiento <span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="date" id="reg-pro-fecn" min="1950-01-01" max="2003-02-27" maxlength="8">
+                                                <label class="form-control-label">Fecha de Nacimiento <span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="date" id="reg-pro-fecn"
+                                                    min="1950-01-01" max="2003-02-27" maxlength="8">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Género <span class="tx-danger">*</span></label>
+                                                <label class="form-control-label">Género <span
+                                                        class="tx-danger">*</span></label>
                                                 <select class="form-control rdGeneroP" id="reg-pro-genDip">
                                                     <option value="">Selecciona una opción</option>
                                                     <option value="MASCULINO">Masculino</option>
@@ -303,7 +295,8 @@
                                             </div>
 
                                             <div class="form-check" style="display: none;" id="boxDipMP">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="checkDipMP">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="checkDipMP">
                                                 <label class="form-check-label form-control-label">
                                                     ¿Desea recibir informacion acerca de la paridad de genero?
                                                 </label>
@@ -313,43 +306,63 @@
 
                                             <div class="form-group" id="CemailDipMP" style="display: none;">
                                                 <label class="form-control-label" id="etiq">Correo Electrónico</label>
-                                                <input class="form-control" type="email" id="IemailDipMA" name="email" placeholder="usuario@dominio.com" size="30">
+                                                <input class="form-control" type="email" id="IemailDipMA" name="email"
+                                                    placeholder="usuario@dominio.com" size="30">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Lugar de Nacimiento <span class="tx-danger">*</span></label>
+                                                <label class="form-control-label">Lugar de Nacimiento <span
+                                                        class="tx-danger">*</span></label>
                                                 <select required class="form-control estados" id="reg-pro-sitenac">
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Clave de Elector <span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="text" maxlength="18" minlength="18" onkeypress="return  restriccion(event)" placeholder="ABCD123456FDCVGBHC" id="reg-pro-claveElector">
+                                                <label class="form-control-label">Clave de Elector <span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="text" maxlength="18" minlength="18"
+                                                    onkeypress="return  restriccion(event)"
+                                                    placeholder="ABCD123456FDCVGBHC" id="reg-pro-claveElector">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">CURP <span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="text" maxlength="18" minlength="18" placeholder="MECC020123HDFNRR04" id="reg-pro-curp" onkeypress="return  restriccion(event)">
+                                                <label class="form-control-label">CURP <span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="text" maxlength="18" minlength="18"
+                                                    placeholder="MECC020123HDFNRR04" id="reg-pro-curp"
+                                                    onkeypress="return  restriccion(event)">
                                             </div>
 
                                             <!--nuevo campos ha agregar-->
                                             <div class="form-group">
                                                 <label class="form-control-label">Número de emisión de la credencial
                                                     para votar<span class="tx-danger">*</span></label>
-                                                <input type="text" class="form-control tiempo_residencia" id="reg-pro-num_emision" name="reg-num_emision" placeholder="Número de emisión de la credencial" onkeypress="return  soloNumeros(event)" maxlength="4" minlength="1">
+                                                <input type="text" class="form-control tiempo_residencia"
+                                                    id="reg-pro-num_emision" name="reg-num_emision"
+                                                    placeholder="Número de emisión de la credencial"
+                                                    onkeypress="return  soloNumeros(event)" maxlength="4" minlength="1">
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="form-control-label">OCR<span class="tx-danger">*</span></label>
-                                                <input type="text" class="form-control tiempo_residencia" id="reg-pro-ocr" name="OCR" placeholder="OCR" onkeypress="return soloNumeros(event)" maxlength="13" minlength="1">
+                                                <label class="form-control-label">OCR<span
+                                                        class="tx-danger">*</span></label>
+                                                <input type="text" class="form-control tiempo_residencia"
+                                                    id="reg-pro-ocr" name="OCR" placeholder="OCR"
+                                                    onkeypress="return soloNumeros(event)" maxlength="13" minlength="1">
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="form-control-label">CIC (Código de Identificación de
                                                     Credencial para Votar)<span class="tx-danger"></span></label>
-                                                <input class="form-control" name="CIC" type="text" maxlength="15" minlength="15" placeholder="Código de identificación de Credencial para Votar " id="reg-pro-CIC">
+                                                <input class="form-control" name="CIC" type="text" maxlength="15"
+                                                    minlength="15"
+                                                    placeholder="Código de identificación de Credencial para Votar "
+                                                    id="reg-pro-CIC">
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="form-control-label">Sección<span class="tx-danger">*</span></label>
-                                                <input type="text" class="form-control tiempo_residencia" id="reg-pro-seccion" name="seccion" placeholder="Sección" onkeypress="return soloNumeros(event)" maxlength="4" minlength="1">
+                                                <label class="form-control-label">Sección<span
+                                                        class="tx-danger">*</span></label>
+                                                <input type="text" class="form-control tiempo_residencia"
+                                                    id="reg-pro-seccion" name="seccion" placeholder="Sección"
+                                                    onkeypress="return soloNumeros(event)" maxlength="4" minlength="1">
                                             </div>
                                             <!--fin de los nuevos campos-->
 
@@ -357,10 +370,15 @@
 
 
                                             <div class="form-group">
-                                                <label class="form-control-label">Tiempo de Residencia <span class="tx-danger">*</span></label>
+                                                <label class="form-control-label">Tiempo de Residencia <span
+                                                        class="tx-danger">*</span></label>
                                                 <div class="input-group">
-                                                    <label class="form-control-label d-none">Tiempo de Residencia <span class="tx-danger">*</span></label>
-                                                    <input type="text" class="form-control tiempo_residencia" id="reg-pro-timeres" name="tiempo" onkeypress="return  restriccionTime(event)" maxlength="2" minlength="1">
+                                                    <label class="form-control-label d-none">Tiempo de Residencia <span
+                                                            class="tx-danger">*</span></label>
+                                                    <input type="text" class="form-control tiempo_residencia"
+                                                        id="reg-pro-timeres" name="tiempo"
+                                                        onkeypress="return  restriccionTime(event)" maxlength="2"
+                                                        minlength="1">
                                                     <div class="input-group-append">
                                                         <span class="input-group-text">AÑOS</span>
                                                     </div>
@@ -369,7 +387,8 @@
 
                                             <div class="form-group">
                                                 <label class="form-control-label">Sobrenombre</label>
-                                                <input class="form-control" type="text" id="reg-pro-sobrenombre" onkeypress="return  restriccionNombre(event)">
+                                                <input class="form-control" type="text" id="reg-pro-sobrenombre"
+                                                    onkeypress="return  restriccionNombre(event)">
                                             </div>
 
 
@@ -383,8 +402,10 @@
 
                                         </div>
                                         <div class="justify-content-center btn-formulario">
-                                            <button type="button" name="button" class="btn btn-secondary" id="eraseFDP">Cancelar</button>
-                                            <button type="button" name="button" class="btn btn-primary" id="addAndContinue">Registrar Propietario</button>
+                                            <button type="button" name="button" class="btn btn-secondary"
+                                                id="eraseFDP">Cancelar</button>
+                                            <button type="button" name="button" class="btn btn-primary"
+                                                id="addAndContinue">Registrar Propietario</button>
                                         </div>
                                     </form>
                                 </div>
@@ -396,25 +417,29 @@
                                         </h5>
                                         <form method="POST" id="docPropietario">
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-snr">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-snr">
                                                 <label class="form-check-label form-control-label" for="defaultCheck1">
                                                     Documento emitido por el SNR del INE.
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-regcan">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-regcan">
                                                 <label class="form-check-label form-control-label" for="defaultCheck2">
                                                     Solicitud de Registro de Candidatura.
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-cred">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-cred">
                                                 <label class="form-check-label form-control-label" for="defaultCheck5">
                                                     Credencial para votar vigente.
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-actnac">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-actnac">
                                                 <label class="form-check-label form-control-label" for="defaultCheck3">
                                                     Copia certificada del Acta de Nacimiento.
                                                 </label>
@@ -423,27 +448,34 @@
                                                 <label class="form-check-label form-control-label">Copia certificada del
                                                     Acta de Nacimiento del padre o madre Tlaxcalteca</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="proCopiaMPT" id="d-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="d-can1">Si</label>
+                                                    <input class="form-check-input" type="radio" name="proCopiaMPT"
+                                                        id="d-can1" value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="d-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="proCopiaMPT" id="d-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="d-can2">No</label>
+                                                    <input class="form-check-input" type="radio" name="proCopiaMPT"
+                                                        id="d-can2" value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="d-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="proCopiaMPT" id="d-can3" value="NO APLICA" checked="checked">
+                                                    <input class="form-check-input" type="radio" name="proCopiaMPT"
+                                                        id="d-can3" value="NO APLICA" checked="checked">
                                                     <label class="form-check-label form-control-label" for="d-can3">No
                                                         aplica</label>
                                                 </div>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-radicacion">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-radicacion">
                                                 <label class="form-check-label form-control-label" for="defaultCheck8">
                                                     Constancia de radicación.
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-aceptacion">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-aceptacion">
                                                 <label class="form-check-label form-control-label" for="defaultCheck6">
                                                     Constancia de aceptación de la postulación.
                                                 </label>
@@ -452,20 +484,24 @@
                                                 <label class="form-check-label form-control-label">Constancia de
                                                     separación del cargo de la función pública.</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input doc-checkbox" type="radio" name="proSeparacionCargo" value="SI">
+                                                    <input class="form-check-input doc-checkbox" type="radio"
+                                                        name="proSeparacionCargo" value="SI">
                                                     <label class="form-check-label form-control-label">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input doc-checkbox" type="radio" name="proSeparacionCargo" value="NO">
+                                                    <input class="form-check-input doc-checkbox" type="radio"
+                                                        name="proSeparacionCargo" value="NO">
                                                     <label class="form-check-label form-control-label">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input doc-checkbox" type="radio" name="proSeparacionCargo" value="NO APLICA" checked="checked">
+                                                    <input class="form-check-input doc-checkbox" type="radio"
+                                                        name="proSeparacionCargo" value="NO APLICA" checked="checked">
                                                     <label class="form-check-label form-control-label">No aplica</label>
                                                 </div>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-inhabilitado">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-inhabilitado">
                                                 <label class="form-check-label form-control-label" for="defaultCheck10">
                                                     Escrito bajo protesta de decir verdad, que no se encuentra
                                                     inhabilitado para ocupar un cargo público y que no se cuenta con
@@ -473,25 +509,29 @@
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-antpen">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-antpen">
                                                 <label class="form-check-label form-control-label" for="defaultCheck9">
                                                     Carta de antecendentes no penales.
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-me">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-me">
                                                 <label class="form-check-label form-control-label" for="defaultCheck11">
                                                     Manifestación de partido político.
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-ce">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-ce">
                                                 <label class="form-check-label form-control-label" for="defaultCheck12">
                                                     Informe de capacidad económica.
                                                 </label>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="pro-cp">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="pro-cp">
                                                 <label class="form-check-label form-control-label" for="defaultCheck13">
                                                     Cédula de identificación fiscal.
                                                 </label>
@@ -500,7 +540,8 @@
 
                                             <!--cambios de ultima hora-->
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="doc-carta-3-dp">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="doc-carta-3-dp">
                                                 <label class="form-check-label form-control-label" for="doc-carta-3-dp">
                                                     CARTA 3 DE 3
                                                 </label>
@@ -510,16 +551,22 @@
                                                 <label class="form-check-label form-control-label">CARTA
                                                     REELECCIÓN</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="cartaEleccion-dp" id="cartaEleccion-dp-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="cartaEleccion-dp-can1">Si</label>
+                                                    <input class="form-check-input" type="radio" name="cartaEleccion-dp"
+                                                        id="cartaEleccion-dp-can1" value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="cartaEleccion-dp-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="cartaEleccion-dp" id="cartaEleccion-dp-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="cartaEleccion-dp-can2">No</label>
+                                                    <input class="form-check-input" type="radio" name="cartaEleccion-dp"
+                                                        id="cartaEleccion-dp-can2" value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="cartaEleccion-dp-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="cartaEleccion-dp" id="cartaEleccion-dp-can3" value="NO APLICA" checked="checked">
-                                                    <label class="form-check-label form-control-label" for="cartaEleccion-dp-can3">No aplica</label>
+                                                    <input class="form-check-input" type="radio" name="cartaEleccion-dp"
+                                                        id="cartaEleccion-dp-can3" value="NO APLICA" checked="checked">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="cartaEleccion-dp-can3">No aplica</label>
                                                 </div>
                                             </div>
 
@@ -528,16 +575,26 @@
                                                 <label class="form-check-label form-control-label">CONSTANCIA DE
                                                     AUTORIZACIÓN DEL ÓRGANO PARTIDISTA EN CASO DE RELECCIÓN</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-dp" id="constAutOrganoPartidista-dp-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="constAutOrganoPartidista-dp-can1">Si</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="constAutOrganoPartidista-dp"
+                                                        id="constAutOrganoPartidista-dp-can1" value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="constAutOrganoPartidista-dp-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-dp" id="constAutOrganoPartidista-dp-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="constAutOrganoPartidista-dp-can2">No</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="constAutOrganoPartidista-dp"
+                                                        id="constAutOrganoPartidista-dp-can2" value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="constAutOrganoPartidista-dp-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-dp" id="constAutOrganoPartidista-dp-can3" value="NO APLICA" checked="checked">
-                                                    <label class="form-check-label form-control-label" for="constAutOrganoPartidista-dp-can3">No aplica</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="constAutOrganoPartidista-dp"
+                                                        id="constAutOrganoPartidista-dp-can3" value="NO APLICA"
+                                                        checked="checked">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="constAutOrganoPartidista-dp-can3">No aplica</label>
                                                 </div>
                                             </div>
 
@@ -545,16 +602,26 @@
                                                 <label class="form-check-label form-control-label">MANIFESTACIÓN DE
                                                     AUTOADSCRIPCIÓN INDÍGENA</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-dp" id="manifestacionIndigena-dp-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="manifestacionIndigena-dp-can1">Si</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="manifestacionIndigena-dp"
+                                                        id="manifestacionIndigena-dp-can1" value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="manifestacionIndigena-dp-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-dp" id="manifestacionIndigena-dp-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="manifestacionIndigena-dp-can2">No</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="manifestacionIndigena-dp"
+                                                        id="manifestacionIndigena-dp-can2" value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="manifestacionIndigena-dp-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-dp" id="manifestacionIndigena-dp-can3" value="NO APLICA" checked="checked">
-                                                    <label class="form-check-label form-control-label" for="manifestacionIndigena-dp-can3">No aplica</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="manifestacionIndigena-dp"
+                                                        id="manifestacionIndigena-dp-can3" value="NO APLICA"
+                                                        checked="checked">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="manifestacionIndigena-dp-can3">No aplica</label>
                                                 </div>
                                             </div>
 
@@ -563,16 +630,25 @@
                                                 <label class="form-check-label form-control-label">CONSTANCIAS QUE
                                                     ACREDITEN EL VÍNCULO COMUNITARIO</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="consVinculoComuni-dp" id="consVinculoComuni-dp-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="consVinculoComuni-dp-can1">Si</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="consVinculoComuni-dp" id="consVinculoComuni-dp-can1"
+                                                        value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="consVinculoComuni-dp-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="consVinculoComuni-dp" id="consVinculoComuni-dp-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="consVinculoComuni-dp-can2">No</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="consVinculoComuni-dp" id="consVinculoComuni-dp-can2"
+                                                        value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="consVinculoComuni-dp-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="consVinculoComuni-dp" id="consVinculoComuni-dp-can3" value="NO APLICA" checked="checked">
-                                                    <label class="form-check-label form-control-label" for="consVinculoComuni-dp-can3">No aplica</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="consVinculoComuni-dp" id="consVinculoComuni-dp-can3"
+                                                        value="NO APLICA" checked="checked">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="consVinculoComuni-dp-can3">No aplica</label>
                                                 </div>
                                             </div>
                                             <!--fin cambios de ultima hora-->
@@ -586,7 +662,8 @@
                             </div>
                             <!-- row -->
                         </div>
-                        <div class="tab-pane fade" id="pills-suplente" role="tabpanel" aria-labelledby="pills-suplente-tab">
+                        <div class="tab-pane fade" id="pills-suplente" role="tabpanel"
+                            aria-labelledby="pills-suplente-tab">
                             <div class="row reg-sup">
                                 <!-- Suplente -->
                                 <div class="split-form">
@@ -595,23 +672,31 @@
 
                                             <h5 class="titulo"><i class="icon fa fa-user"></i> Suplente</h5>
                                             <div class="form-group">
-                                                <label class="form-control-label">Nombre(s)<span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="text" id="reg-sup-nombre" onkeypress="return  restriccionNombre(event)">
+                                                <label class="form-control-label">Nombre(s)<span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="text" id="reg-sup-nombre"
+                                                    onkeypress="return  restriccionNombre(event)">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Apellido Paterno<span class="tx-danger">*</span></label>
+                                                <label class="form-control-label">Apellido Paterno<span
+                                                        class="tx-danger">*</span></label>
                                                 <input class="form-control" type="text" id="reg-sup-ap">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Apellido Materno <span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="text" id="reg-sup-am" onkeypress="return  restriccionNombre(event)">
+                                                <label class="form-control-label">Apellido Materno <span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="text" id="reg-sup-am"
+                                                    onkeypress="return  restriccionNombre(event)">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Fecha de Nacimiento <span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="date" id="reg-sup-fecn" min="1950-01-01" max="2003-02-27" maxlength="8">
+                                                <label class="form-control-label">Fecha de Nacimiento <span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="date" id="reg-sup-fecn"
+                                                    min="1950-01-01" max="2003-02-27" maxlength="8">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Género <span class="tx-danger">*</span></label>
+                                                <label class="form-control-label">Género <span
+                                                        class="tx-danger">*</span></label>
                                                 <select class="form-control rdGeneroS" id="reg-sup-gen">
                                                     <option value="">Selecciona una opción</option>
                                                     <option value="MASCULINO">Masculino</option>
@@ -619,7 +704,8 @@
                                                 </select>
                                             </div>
                                             <div class="form-check" style="display: none;" id="boxDipMS">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="checkDipMS">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="checkDipMS">
                                                 <label class="form-check-label form-control-label">
                                                     ¿Desea recibir informacion acerca de la paridad de genero?
                                                 </label>
@@ -629,19 +715,28 @@
 
                                             <div class="form-group" id="CemailDipMS" style="display: none;">
                                                 <label class="form-control-label" id="etiq">Correo Electrónico</label>
-                                                <input class="form-control" type="email" id="IemailDipMAS" name="email" placeholder="usuario@dominio.com" size="30">
+                                                <input class="form-control" type="email" id="IemailDipMAS" name="email"
+                                                    placeholder="usuario@dominio.com" size="30">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Lugar de Nacimiento <span class="tx-danger">*</span></label>
-                                                <select required class="form-control estado" id="reg-sup-sitenac"></select>
+                                                <label class="form-control-label">Lugar de Nacimiento <span
+                                                        class="tx-danger">*</span></label>
+                                                <select required class="form-control estado"
+                                                    id="reg-sup-sitenac"></select>
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">Clave de Elector <span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="text" maxlength="18" minlength="18" onkeypress="return  restriccion(event)" placeholder="ABCD123456FDCVGBHC" id="reg-sup-claveElector">
+                                                <label class="form-control-label">Clave de Elector <span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="text" maxlength="18" minlength="18"
+                                                    onkeypress="return  restriccion(event)"
+                                                    placeholder="ABCD123456FDCVGBHC" id="reg-sup-claveElector">
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-control-label">CURP <span class="tx-danger">*</span></label>
-                                                <input class="form-control" type="text" maxlength="18" minlength="18" placeholder="MECC020123HDFNRR04" id="reg-sup-curp" onkeypress="return  restriccion(event)">
+                                                <label class="form-control-label">CURP <span
+                                                        class="tx-danger">*</span></label>
+                                                <input class="form-control" type="text" maxlength="18" minlength="18"
+                                                    placeholder="MECC020123HDFNRR04" id="reg-sup-curp"
+                                                    onkeypress="return  restriccion(event)">
                                             </div>
 
 
@@ -651,23 +746,35 @@
                                             <div class="form-group">
                                                 <label class="form-control-label">Número de emisión de la credencial
                                                     para votar<span class="tx-danger">*</span></label>
-                                                <input type="text" class="form-control tiempo_residencia" id="reg-sup-num_emision" name="reg-sup-num_emision" placeholder="Número de emisión de la credencial" onkeypress="return  soloNumeros(event)" maxlength="4" minlength="1">
+                                                <input type="text" class="form-control tiempo_residencia"
+                                                    id="reg-sup-num_emision" name="reg-sup-num_emision"
+                                                    placeholder="Número de emisión de la credencial"
+                                                    onkeypress="return  soloNumeros(event)" maxlength="4" minlength="1">
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="form-control-label">OCR<span class="tx-danger">*</span></label>
-                                                <input type="text" class="form-control tiempo_residencia" id="reg-sup-ocr" name="OCR" placeholder="OCR" onkeypress="return soloNumeros(event)" maxlength="13" minlength="1">
+                                                <label class="form-control-label">OCR<span
+                                                        class="tx-danger">*</span></label>
+                                                <input type="text" class="form-control tiempo_residencia"
+                                                    id="reg-sup-ocr" name="OCR" placeholder="OCR"
+                                                    onkeypress="return soloNumeros(event)" maxlength="13" minlength="1">
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="form-control-label">CIC (Código de Identificación de
                                                     Credencial para Votar)<span class="tx-danger"></span></label>
-                                                <input class="form-control" name="CIC" type="text" maxlength="15" minlength="15" placeholder="Código de identificación de Credencial para Votar " id="reg-sup-CIC">
+                                                <input class="form-control" name="CIC" type="text" maxlength="15"
+                                                    minlength="15"
+                                                    placeholder="Código de identificación de Credencial para Votar "
+                                                    id="reg-sup-CIC">
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="form-control-label">Sección<span class="tx-danger">*</span></label>
-                                                <input type="text" class="form-control tiempo_residencia" id="reg-sup-seccion" name="seccion" placeholder="Sección" onkeypress="return soloNumeros(event)" maxlength="4" minlength="1">
+                                                <label class="form-control-label">Sección<span
+                                                        class="tx-danger">*</span></label>
+                                                <input type="text" class="form-control tiempo_residencia"
+                                                    id="reg-sup-seccion" name="seccion" placeholder="Sección"
+                                                    onkeypress="return soloNumeros(event)" maxlength="4" minlength="1">
                                             </div>
                                             <!--fin de los nuevos campos-->
 
@@ -677,16 +784,22 @@
 
 
                                             <div class="form-group">
-                                                <label class="form-control-label">Tiempo de Residencia <span class="tx-danger">*</span></label>
+                                                <label class="form-control-label">Tiempo de Residencia <span
+                                                        class="tx-danger">*</span></label>
                                                 <div class="input-group-prepend">
-                                                    <label class="form-control-label d-none">Tiempo de Residencia <span class="tx-danger">*</span></label>
-                                                    <input class="form-control tiempo_residencia" type="text" id="reg-sup-timeres" aria-describedby="inputGroupPrepend" onkeypress="return  restriccionTime(event)" maxlength="2" minlength="1">
+                                                    <label class="form-control-label d-none">Tiempo de Residencia <span
+                                                            class="tx-danger">*</span></label>
+                                                    <input class="form-control tiempo_residencia" type="text"
+                                                        id="reg-sup-timeres" aria-describedby="inputGroupPrepend"
+                                                        onkeypress="return  restriccionTime(event)" maxlength="2"
+                                                        minlength="1">
                                                     <span class="input-group-text" id="inputGroupPrepend">Años</span>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="form-control-label">Sobrenombre</label>
-                                                <input class="form-control" type="text" id="reg-sup-sobrenombre" onkeypress="return  restriccionNombre(event)">
+                                                <input class="form-control" type="text" id="reg-sup-sobrenombre"
+                                                    onkeypress="return  restriccionNombre(event)">
                                             </div>
                                             <div class="form-group fadeIn">
                                                 <input type="checkbox" id="cboPoliticaDS">
@@ -697,8 +810,10 @@
                                             </div>
                                         </div>
                                         <div class="justify-content-center btn-formulario">
-                                            <button type="button" name="button" class="btn btn-secondary" id="eraseFDS">Cancelar</button>
-                                            <button type="button" name="button" class="btn btn-primary" id="addCandidatura">Registrar Suplente</button>
+                                            <button type="button" name="button" class="btn btn-secondary"
+                                                id="eraseFDS">Cancelar</button>
+                                            <button type="button" name="button" class="btn btn-primary"
+                                                id="addCandidatura">Registrar Suplente</button>
                                         </div>
                                     </form>
                                 </div>
@@ -736,15 +851,20 @@
                                                 <label class="form-check-label form-control-label">Copia certificada del
                                                     Acta de Nacimiento del padre o madre Tlaxcalteca</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="copiaMPTsup" id="d-canS1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="d-canS1">Si</label>
+                                                    <input class="form-check-input" type="radio" name="copiaMPTsup"
+                                                        id="d-canS1" value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="d-canS1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="copiaMPTsup" id="d-canS2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="d-canS2">No</label>
+                                                    <input class="form-check-input" type="radio" name="copiaMPTsup"
+                                                        id="d-canS2" value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="d-canS2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="copiaMPTsup" id="d-canS3" value="NO APLICA" checked="checked">
+                                                    <input class="form-check-input" type="radio" name="copiaMPTsup"
+                                                        id="d-canS3" value="NO APLICA" checked="checked">
                                                     <label class="form-check-label form-control-label" for="d-canS3">No
                                                         aplica</label>
                                                 </div>
@@ -765,20 +885,24 @@
                                                 <label class="form-check-label form-control-label">Constancia de
                                                     separación del cargo o la función pública.</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="separacionCargoSup" value="SI">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="separacionCargoSup" value="SI">
                                                     <label class="form-check-label form-control-label">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="separacionCargoSup" value="NO">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="separacionCargoSup" value="NO">
                                                     <label class="form-check-label form-control-label">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="separacionCargoSup" value="NO APLICA" checked="checked">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="separacionCargoSup" value="NO APLICA" checked="checked">
                                                     <label class="form-check-label form-control-label">No aplica</label>
                                                 </div>
                                             </div>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="doc-inhabilitado-sup">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="doc-inhabilitado-sup">
                                                 <label class="form-check-label form-control-label" for="defaultCheck10">
                                                     Escrito bajo protesta de decir verdad, que no se encuentra
                                                     inhabilitado para ocupar un cargo público y que no se cuenta con
@@ -816,7 +940,8 @@
 
                                             <!--cambios de ultima hora-->
                                             <div class="form-check">
-                                                <input class="form-check-input doc-checkbox" type="checkbox" id="doc-carta-3-ds">
+                                                <input class="form-check-input doc-checkbox" type="checkbox"
+                                                    id="doc-carta-3-ds">
                                                 <label class="form-check-label form-control-label" for="doc-carta-3-ds">
                                                     CARTA 3 DE 3
                                                 </label>
@@ -826,16 +951,22 @@
                                                 <label class="form-check-label form-control-label">CARTA
                                                     REELECCIÓN</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="cartaEleccion-ds" id="cartaEleccion-ds-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="cartaEleccion-ds-can1">Si</label>
+                                                    <input class="form-check-input" type="radio" name="cartaEleccion-ds"
+                                                        id="cartaEleccion-ds-can1" value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="cartaEleccion-ds-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="cartaEleccion-ds" id="cartaEleccion-ds-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="cartaEleccion-ds-can2">No</label>
+                                                    <input class="form-check-input" type="radio" name="cartaEleccion-ds"
+                                                        id="cartaEleccion-ds-can2" value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="cartaEleccion-ds-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="cartaEleccion-ds" id="cartaEleccion-ds-can3" value="NO APLICA" checked="checked">
-                                                    <label class="form-check-label form-control-label" for="cartaEleccion-ds-can3">No aplica</label>
+                                                    <input class="form-check-input" type="radio" name="cartaEleccion-ds"
+                                                        id="cartaEleccion-ds-can3" value="NO APLICA" checked="checked">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="cartaEleccion-ds-can3">No aplica</label>
                                                 </div>
                                             </div>
 
@@ -844,16 +975,26 @@
                                                 <label class="form-check-label form-control-label">CONSTANCIA DE
                                                     AUTORIZACIÓN DEL ÓRGANO PARTIDISTA EN CASO DE RELECCIÓN</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-ds" id="constAutOrganoPartidista-ds-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="constAutOrganoPartidista-ds-can1">Si</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="constAutOrganoPartidista-ds"
+                                                        id="constAutOrganoPartidista-ds-can1" value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="constAutOrganoPartidista-ds-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-ds" id="constAutOrganoPartidista-ds-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="constAutOrganoPartidista-ds-can2">No</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="constAutOrganoPartidista-ds"
+                                                        id="constAutOrganoPartidista-ds-can2" value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="constAutOrganoPartidista-ds-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-ds" id="constAutOrganoPartidista-ds-can3" value="NO APLICA" checked="checked">
-                                                    <label class="form-check-label form-control-label" for="constAutOrganoPartidista-ds-can3">No aplica</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="constAutOrganoPartidista-ds"
+                                                        id="constAutOrganoPartidista-ds-can3" value="NO APLICA"
+                                                        checked="checked">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="constAutOrganoPartidista-ds-can3">No aplica</label>
                                                 </div>
                                             </div>
 
@@ -861,16 +1002,26 @@
                                                 <label class="form-check-label form-control-label">MANIFESTACIÓN DE
                                                     AUTOADSCRIPCIÓN INDÍGENA</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-ds" id="manifestacionIndigena-ds-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="manifestacionIndigena-ds-can1">Si</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="manifestacionIndigena-ds"
+                                                        id="manifestacionIndigena-ds-can1" value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="manifestacionIndigena-ds-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-ds" id="manifestacionIndigena-ds-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="manifestacionIndigena-ds-can2">No</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="manifestacionIndigena-ds"
+                                                        id="manifestacionIndigena-ds-can2" value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="manifestacionIndigena-ds-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-ds" id="manifestacionIndigena-ds-can3" value="NO APLICA" checked="checked">
-                                                    <label class="form-check-label form-control-label" for="manifestacionIndigena-ds-can3">No aplica</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="manifestacionIndigena-ds"
+                                                        id="manifestacionIndigena-ds-can3" value="NO APLICA"
+                                                        checked="checked">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="manifestacionIndigena-ds-can3">No aplica</label>
                                                 </div>
                                             </div>
 
@@ -879,16 +1030,25 @@
                                                 <label class="form-check-label form-control-label">CONSTANCIAS QUE
                                                     ACREDITEN EL VÍNCULO COMUNITARIO</label>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="consVinculoComuni-ds" id="consVinculoComuni-ds-can1" value="SI">
-                                                    <label class="form-check-label form-control-label" for="consVinculoComuni-ds-can1">Si</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="consVinculoComuni-ds" id="consVinculoComuni-ds-can1"
+                                                        value="SI">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="consVinculoComuni-ds-can1">Si</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="consVinculoComuni-ds" id="consVinculoComuni-ds-can2" value="NO">
-                                                    <label class="form-check-label form-control-label" for="consVinculoComuni-ds-can2">No</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="consVinculoComuni-ds" id="consVinculoComuni-ds-can2"
+                                                        value="NO">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="consVinculoComuni-ds-can2">No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="consVinculoComuni-ds" id="consVinculoComuni-ds-can3" value="NO APLICA" checked="checked">
-                                                    <label class="form-check-label form-control-label" for="consVinculoComuni-ds-can3">No aplica</label>
+                                                    <input class="form-check-input" type="radio"
+                                                        name="consVinculoComuni-ds" id="consVinculoComuni-ds-can3"
+                                                        value="NO APLICA" checked="checked">
+                                                    <label class="form-check-label form-control-label"
+                                                        for="consVinculoComuni-ds-can3">No aplica</label>
                                                 </div>
                                             </div>
                                             <!--fin cambios de ultima hora-->
@@ -944,9 +1104,11 @@
                     <form class="row" method="post">
                         <label for="clave-elector-original" class="col-lg-2 col-form-label">Clave Elector</label>
                         <div class="col-lg-6">
-                            <input type="text" class="form-control" placeholder="ABCD123456FDCVGBHC" id="busqueda-subsanar" autocomplete="off" maxlength="18" minlength="18">
+                            <input type="text" class="form-control" placeholder="ABCD123456FDCVGBHC"
+                                id="busqueda-subsanar" autocomplete="off" maxlength="18" minlength="18">
                         </div>
-                        <button type="submit" class="btn btn-primary col-lg-2 btn-candsub" id="search_subsanacion"><i class="fa fa-search"></i> Buscar</button>
+                        <button type="submit" class="btn btn-primary col-lg-2 btn-candsub" id="search_subsanacion"><i
+                                class="fa fa-search"></i> Buscar</button>
                     </form>
                 </div>
                 <!-- Subsanacion Representacion proporcional -->
@@ -971,7 +1133,8 @@
                     <form class="row" method="post">
                         <label for="clave-elector-original" class="col-lg-2 col-form-label">Clave Elector</label>
                         <div class="col-lg-6">
-                            <input type="text" class="form-control" placeholder="ABCD123456FDCVGBHC" id="busqueda-sustituir" autocomplete="off" maxlength="18" minlength="18">
+                            <input type="text" class="form-control" placeholder="ABCD123456FDCVGBHC"
+                                id="busqueda-sustituir" autocomplete="off" maxlength="18" minlength="18">
                         </div>
                         <button type="submit" class="btn btn-primary col-lg-2 btn-sust"><i class="fa fa-search"></i>
                             Buscar</button>
@@ -1086,13 +1249,15 @@
                     <div class="form-estilo row form-sust">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-control-label">Fecha de Sustitución <span class="tx-danger">*</span></label>
+                                <label class="form-control-label">Fecha de Sustitución <span
+                                        class="tx-danger">*</span></label>
                                 <div id="fechaSustitucion"></div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="form-control-label">Motivo de Sustitución <span class="tx-danger">*</span></label>
+                                <label class="form-control-label">Motivo de Sustitución <span
+                                        class="tx-danger">*</span></label>
                                 <select class="form-control" id="motivoSustitucion">
                                     <option value="">Selecciona una opción</option>
                                     <option value="INAHBILITACION">Inhabilitación</option>
@@ -1107,41 +1272,54 @@
                             <div class="marg-form">
                                 <form id="infoSustitucion" method="post">
                                     <div class="form-group">
-                                        <label class="form-control-label">Nombre(s) <span class="tx-danger">*</span></label>
-                                        <input class="form-control" onkeypress="return  restriccionNombre(event)" type="text" id="new-nombre">
+                                        <label class="form-control-label">Nombre(s) <span
+                                                class="tx-danger">*</span></label>
+                                        <input class="form-control" onkeypress="return  restriccionNombre(event)"
+                                            type="text" id="new-nombre">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Apellido Paterno <span class="tx-danger">*</span></label>
-                                        <input class="form-control" onkeypress="return  restriccionNombre(event)" type="text" id="new-ap">
+                                        <label class="form-control-label">Apellido Paterno <span
+                                                class="tx-danger">*</span></label>
+                                        <input class="form-control" onkeypress="return  restriccionNombre(event)"
+                                            type="text" id="new-ap">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Apellido Materno <span class="tx-danger">*</span></label>
-                                        <input class="form-control" onkeypress="return  restriccionNombre(event)" type="text" id="new-am">
+                                        <label class="form-control-label">Apellido Materno <span
+                                                class="tx-danger">*</span></label>
+                                        <input class="form-control" onkeypress="return  restriccionNombre(event)"
+                                            type="text" id="new-am">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Tipo de candidatura <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Tipo de candidatura <span
+                                                class="tx-danger">*</span></label>
                                         <div class="new-type" id="new-type"></div>
                                         <input type="text" class="d-none" value="" id="id-new-type">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Partido Político <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Partido Político <span
+                                                class="tx-danger">*</span></label>
                                         <div class="new-pp" id="new-pp"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Distrito <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Distrito <span
+                                                class="tx-danger">*</span></label>
                                         <div class="new-distrito" id="new-distrito"></div>
                                     </div>
                                     <div class="form-group prelacion-campo">
-                                        <label class="form-control-label">Prelación <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Prelación <span
+                                                class="tx-danger">*</span></label>
                                         <div id="new-prelacion"></div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="form-control-label">Fecha de nacimiento <span class="tx-danger">*</span></label>
-                                        <input class="form-control" type="date" min="1950-01-01" max="2003-02-27" id="new-fecnac">
+                                        <label class="form-control-label">Fecha de nacimiento <span
+                                                class="tx-danger">*</span></label>
+                                        <input class="form-control" type="date" min="1950-01-01" max="2003-02-27"
+                                            id="new-fecnac">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Género <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Género <span
+                                                class="tx-danger">*</span></label>
                                         <select class="form-control" id="new-genero">
                                             <option value="">Selecciona una opción</option>
                                             <option value="MASCULINO">Masculino</option>
@@ -1157,21 +1335,28 @@
 
                                     <div class="form-group" id="CemailNew" style="display: none;">
                                         <label class="form-control-label" id="etiq">Correo Electrónico</label>
-                                        <input class="form-control" type="email" id="IemailNew" name="email" placeholder="usuario@dominio.com" size="30">
+                                        <input class="form-control" type="email" id="IemailNew" name="email"
+                                            placeholder="usuario@dominio.com" size="30">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Lugar de Nacimiento <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Lugar de Nacimiento <span
+                                                class="tx-danger">*</span></label>
                                         <select required class="form-control estados" id="sustitucion-sitenac"></select>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Clave de Elector <span class="tx-danger">*</span></label>
-                                        <input class="form-control" type="text" placeholder="ABCD123456FDCVGBHC" id="new-claveelector" maxlength="18" minlength="18" onkeypress="return  restriccion(event)">
+                                        <label class="form-control-label">Clave de Elector <span
+                                                class="tx-danger">*</span></label>
+                                        <input class="form-control" type="text" placeholder="ABCD123456FDCVGBHC"
+                                            id="new-claveelector" maxlength="18" minlength="18"
+                                            onkeypress="return  restriccion(event)">
                                     </div>
 
 
                                     <div class="form-group">
                                         <label class="form-control-label">Curp <span class="tx-danger">*</span></label>
-                                        <input class="form-control" type="text" id="new-curp" onkeypress="return  restriccion(event)" maxlength="18" minlength="18" onkeypress="return  restriccion(event)">
+                                        <input class="form-control" type="text" id="new-curp"
+                                            onkeypress="return  restriccion(event)" maxlength="18" minlength="18"
+                                            onkeypress="return  restriccion(event)">
                                     </div>
 
 
@@ -1182,20 +1367,25 @@
                                     <div class="form-group">
                                         <label class="form-control-label">Número de emisión de la credencial para votar
                                             <span class="tx-danger">*</span></label>
-                                        <input class="form-control" type="text" id="new-candidato_num_emision" maxlength="4" minlength="1" onkeypress="return  soloNumeros(event)">
+                                        <input class="form-control" type="text" id="new-candidato_num_emision"
+                                            maxlength="4" minlength="1" onkeypress="return  soloNumeros(event)">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label">OCR<span class="tx-danger">*</span></label>
-                                        <input class="form-control" type="text" id="new-candidato_ocr" maxlength="13" minlength="1" onkeypress="return  soloNumeros(event)">
+                                        <input class="form-control" type="text" id="new-candidato_ocr" maxlength="13"
+                                            minlength="1" onkeypress="return  soloNumeros(event)">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-control-label">CIC (Código de Identificación de Credencial
                                             para Votar) <span class="tx-danger"></span></label>
-                                        <input class="form-control" type="text" id="new-candidato_cic" maxlength="15" minlength="15">
+                                        <input class="form-control" type="text" id="new-candidato_cic" maxlength="15"
+                                            minlength="15">
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-control-label">Sección<span class="tx-danger">*</span></label>
-                                        <input class="form-control" type="text" id="new-candidato_seccion" maxlength="4" minlength="1" onkeypress="return soloNumeros(event)">
+                                        <label class="form-control-label">Sección<span
+                                                class="tx-danger">*</span></label>
+                                        <input class="form-control" type="text" id="new-candidato_seccion" maxlength="4"
+                                            minlength="1" onkeypress="return soloNumeros(event)">
                                     </div>
                                     <!--FIN DE LOS NUEVOS CAMPOS-->
 
@@ -1203,16 +1393,19 @@
 
 
                                     <div class="form-group">
-                                        <label class="form-control-label">Tiempo de Residencia <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Tiempo de Residencia <span
+                                                class="tx-danger">*</span></label>
                                         <div class="input-group-prepend">
-                                            <input class="form-control" type="text" id="new-time" onkeypress="return  restriccionTime(event)" maxlength="2" minlength="1">
+                                            <input class="form-control" type="text" id="new-time"
+                                                onkeypress="return  restriccionTime(event)" maxlength="2" minlength="1">
                                             <div class="input-group-text">AÑOS</div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label class="form-control-label">Sobrenombre</label>
-                                        <input class="form-control" type="text" id="new-alias" onkeypress="return  restriccionNombre(event)">
+                                        <input class="form-control" type="text" id="new-alias"
+                                            onkeypress="return  restriccionNombre(event)">
                                     </div>
                                 </form>
                             </div>
@@ -1275,15 +1468,18 @@
                                         <label class="form-check-label form-control-label">Constancia de separación del
                                             cargo o la función pública.</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="separacionCargonew" value="SI">
+                                            <input class="form-check-input" type="radio" name="separacionCargonew"
+                                                value="SI">
                                             <label class="form-check-label form-control-label"> Si</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="separacionCargonew" value="NO">
+                                            <input class="form-check-input" type="radio" name="separacionCargonew"
+                                                value="NO">
                                             <label class="form-check-label form-control-label"> No</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="separacionCargonew" value="NO APLICA" checked="checked">
+                                            <input class="form-check-input" type="radio" name="separacionCargonew"
+                                                value="NO APLICA" checked="checked">
                                             <label class="form-check-label form-control-label"> No aplica</label>
                                         </div>
                                     </div>
@@ -1397,8 +1593,10 @@
                             </div>
                         </div>
                         <div class="justify-content-center btn-formulario">
-                            <button type="button" name="button" class="btn btn-secondary" id="sustitucion-cancelar">Cancelar</button>
-                            <button type="button" name="button" class="btn btn-primary" id="sustitucion-finalizar">Finalizar y Guardar</button>
+                            <button type="button" name="button" class="btn btn-secondary"
+                                id="sustitucion-cancelar">Cancelar</button>
+                            <button type="button" name="button" class="btn btn-primary"
+                                id="sustitucion-finalizar">Finalizar y Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -1423,7 +1621,8 @@
                     <form class="row" method="post">
                         <label for="clave-elector-original" class="col-lg-2 col-form-label">Clave Elector</label>
                         <div class="col-lg-6">
-                            <input type="text" class="form-control" placeholder="ABCD123456FDCVGBHC" id="busqueda-renuncia" autocomplete="off" maxlength="18" minlength="18">
+                            <input type="text" class="form-control" placeholder="ABCD123456FDCVGBHC"
+                                id="busqueda-renuncia" autocomplete="off" maxlength="18" minlength="18">
                         </div>
                         <button type="submit" class="btn btn-primary col-lg-2 btn-canc"><i class="fa fa-search"></i>
                             Buscar</button>
@@ -1539,8 +1738,10 @@
                             </div>
                         </div>
                         <div class="col-sm-6 vertical-btn">
-                            <button type="button" name="button" class="btn btn-secondary" id="cancelar-renuncia">Deshacer</button>
-                            <button type="button" name="button" class="btn btn-primary btn-rm eliminar-candidatura" id="renunciar-candidatura">Cancelar Candidatura</button>
+                            <button type="button" name="button" class="btn btn-secondary"
+                                id="cancelar-renuncia">Deshacer</button>
+                            <button type="button" name="button" class="btn btn-primary btn-rm eliminar-candidatura"
+                                id="renunciar-candidatura">Cancelar Candidatura</button>
                         </div>
                     </div>
                     <input type="text" class="d-none" id="codigo-renuncia" value="">
@@ -1560,7 +1761,8 @@
                             <form id="search-form-nule">
                                 <div class="form-group">
                                     <label>Fecha de Captura </label>
-                                    <input type="date" class="form-control" min="2018-03-01" max="2018-03-31" id="historial-date">
+                                    <input type="date" class="form-control" min="2018-03-01" max="2018-03-31"
+                                        id="historial-date">
                                 </div>
                                 <div class="form-group">
                                     <label>Nombre de Usuario </label>
@@ -1579,7 +1781,8 @@
                             </form>
                         </div>
                         <div class="card-body">
-                            <button type="button" class="btn btn-primary" id="busqueda-historial"><i class="fa fa-search"></i> Buscar</button>
+                            <button type="button" class="btn btn-primary" id="busqueda-historial"><i
+                                    class="fa fa-search"></i> Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -1605,8 +1808,10 @@
                     </div>
 
                     <div class="col-4 justify-content-end  d-flex flex-row align-items-center">
-                        <div><button type="button" class=" btn btn-secondary btn-sm update-user"> <i class="fa fa-refresh" aria-hidden="true"></i> Actualizar</button></div>
-                        <div class="ml-2"><button type="button" class="btn btn-primary btn-sm add-user"> <i class="fa fa-user-plus" aria-hidden="true"></i> Añadir Usuario</button></div>
+                        <div><button type="button" class=" btn btn-secondary btn-sm update-user"> <i
+                                    class="fa fa-refresh" aria-hidden="true"></i> Actualizar</button></div>
+                        <div class="ml-2"><button type="button" class="btn btn-primary btn-sm add-user"> <i
+                                    class="fa fa-user-plus" aria-hidden="true"></i> Añadir Usuario</button></div>
                     </div>
 
                 </div>
@@ -1630,8 +1835,10 @@
                                 <td>******</td>
                                 <td> <span class="badge badge-success">Activo</span> </td>
                                 <td>Supervisor</td>
-                                <td> <button type="button" class="btn btn-primary btn-sm edit-user"> <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button>
-                                    <button type="button" class="btn btn-secondary btn-sm eliminar-usuario"> <i class="fa fa-times-circle" aria-hidden="true"></i> Eliminar</button>
+                                <td> <button type="button" class="btn btn-primary btn-sm edit-user"> <i
+                                            class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button>
+                                    <button type="button" class="btn btn-secondary btn-sm eliminar-usuario"> <i
+                                            class="fa fa-times-circle" aria-hidden="true"></i> Eliminar</button>
                                     <!-- <button type="button" class="btn btn-dark btn-sm reset-user">Reset</button> -->
                                 </td>
                             </tr>
@@ -1666,7 +1873,8 @@
                     <div class="col-md-4 d-none" id="slt_report_municipio">
                         <div class="form-group">
 
-                            <label class="form-control-label" id="l_municipio_repo">Municipio <span class="tx-danger">*</span></label>
+                            <label class="form-control-label" id="l_municipio_repo">Municipio <span
+                                    class="tx-danger">*</span></label>
                             <select class="form-control" id="municipio_repo" disabled>
                                 <option value='Todos'>Todos</option>
                             </select>
@@ -1677,7 +1885,8 @@
                     <div class="col-md-4" id="slt_report_distrito">
                         <div class="form-group">
 
-                            <label class="form-control-label" id="l_distrito_repo">Distrito <span class="tx-danger">*</span></label>
+                            <label class="form-control-label" id="l_distrito_repo">Distrito <span
+                                    class="tx-danger">*</span></label>
                             <select class="form-control" id="distrito_repo" disabled>
                                 <option value='Todos'>Todos</option>
                             </select>
@@ -1732,9 +1941,11 @@
                 </div>
                 <div class="row align-items-center">
                     <div class="btn-reporte">
-                        <button type="button" id="search_reportes" class="btn btn-primary btn-sm"><i class="fa fa-search"></i> Consultar</button>
+                        <button type="button" id="search_reportes" class="btn btn-primary btn-sm"><i
+                                class="fa fa-search"></i> Consultar</button>
                         <!-- <button type="button" class="btn btn-secondary btn-sm" id="print_report"><i class="fa fa-print"></i> Imprimir</button> -->
-                        <button type="button" class="btn btn-secondary btn-sm" id="print_diary"><i class="fa fa-file-pdf-o "></i> Reporte diario</button>
+                        <button type="button" class="btn btn-secondary btn-sm" id="print_diary"><i
+                                class="fa fa-file-pdf-o "></i> Reporte diario</button>
                     </div>
                 </div>
                 <!-- Finaliza la parte de arriba -->
@@ -1745,7 +1956,8 @@
             <div>
                 <div class="" id="table_reportes" style="display: none;width: 1280px!important">
                     <div class="envol-div">
-                        <table class="table table-responsive table-bordered enmedio table-hover" id="table_report" style="width: 1132px!important;">
+                        <table class="table table-responsive table-bordered enmedio table-hover" id="table_report"
+                            style="width: 1132px!important;">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -1852,9 +2064,11 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 
 
-                    <button type="button" class="btn btn-primary exit-btn d-none" id="subsanacionDosclaves">Buscar</button>
+                    <button type="button" class="btn btn-primary exit-btn d-none"
+                        id="subsanacionDosclaves">Buscar</button>
                     <button type="button" class="btn btn-primary exit-btn d-none" id="renunciaSlt">Buscar</button>
-                    <button type="button" class="btn btn-primary exit-btn d-none" id="seleccionar-dosclaves">Buscar</button>
+                    <button type="button" class="btn btn-primary exit-btn d-none"
+                        id="seleccionar-dosclaves">Buscar</button>
                 </div>
             </div>
         </div>
@@ -1904,7 +2118,8 @@
                         <div class="form-group row">
                             <label class="col-sm-4 col-form-label">Fecha de Reporte </label>
                             <div class="col-sm-8">
-                                <input type="date" class="form-control" min="2018-03-16" max="2025-03-26" id="reporte-date">
+                                <input type="date" class="form-control" min="2018-03-16" max="2025-03-26"
+                                    id="reporte-date">
                             </div>
                         </div>
                     </form>
@@ -1989,7 +2204,8 @@
                                 <label class="form-check-label">No</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="subsanacionSep" value="NO APLICA" checked="checked">
+                                <input class="form-check-input" type="radio" name="subsanacionSep" value="NO APLICA"
+                                    checked="checked">
                                 <label class="form-check-label">No Aplica</label>
                             </div>
                         </div>
@@ -2115,7 +2331,8 @@
     </div>
 
     <!-- Modal para mostrar documentacion -->
-    <div class="modal fade" id="modalFaltantesSup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalFaltantesSup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -2140,7 +2357,8 @@
 
 
     <!-- Modal para mostrar documentacion faltantes en  Sustitucion -->
-    <div class="modal fade" id="modalFaltantesSus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalFaltantesSus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -2181,19 +2399,23 @@
                     <form method="post" id="add-user">
                         <div class="form-group">
                             <label class="form-control-label">Nombre(s) <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-name" onkeypress="return  restriccionNombre(event)">
+                            <input type="text" class="form-control" id="user-name"
+                                onkeypress="return  restriccionNombre(event)">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Apellido Paterno <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-app" onkeypress="return  restriccionNombre(event)">
+                            <input type="text" class="form-control" id="user-app"
+                                onkeypress="return  restriccionNombre(event)">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Apellido Materno <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-apm" onkeypress="return  restriccionNombre(event)">
+                            <input type="text" class="form-control" id="user-apm"
+                                onkeypress="return  restriccionNombre(event)">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Usuario <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-username" onkeypress="return  restriccion(event)" maxlength="20">
+                            <input type="text" class="form-control" id="user-username"
+                                onkeypress="return  restriccion(event)" maxlength="20">
                         </div>
 
                         <div class="form-group d-none fadeIn" id="cboContraseña">
@@ -2203,7 +2425,8 @@
 
                         <div class="form-group" id="passCambio">
                             <label class="form-control-label">Contraseña <span class="tx-danger">*</span></label>
-                            <input type="text" class="form-control" id="user-password" onkeypress="return  restriccion(event)" maxlength="20">
+                            <input type="text" class="form-control" id="user-password"
+                                onkeypress="return  restriccion(event)" maxlength="20">
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Rol <span class="tx-danger">*</span></label>
@@ -2247,13 +2470,17 @@
                     </div>
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Información</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Documentación</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-historial" role="tab" aria-controls="nav-historial" aria-selected="false">Historial</a>
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+                                role="tab" aria-controls="nav-home" aria-selected="true">Información</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile"
+                                role="tab" aria-controls="nav-profile" aria-selected="false">Documentación</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-historial"
+                                role="tab" aria-controls="nav-historial" aria-selected="false">Historial</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                            aria-labelledby="nav-home-tab">
                             <div class="row no-gutters cand-exist">
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -2282,7 +2509,8 @@
                                 <!-- Segunda fila -->
                                 <div class="col-md-4 cand_distrito">
                                     <div class="form-group">
-                                        <label class="form-control-label">Distrito <span class="tx-danger">*</span></label>
+                                        <label class="form-control-label">Distrito <span
+                                                class="tx-danger">*</span></label>
                                         <label id="cand_distrito"></label>
                                     </div>
                                 </div>
@@ -2349,15 +2577,18 @@
                                 <label class="form-check-label">5.- Copia certificada del Acta de Nacimiento del padre o
                                     madre Tlaxcalteca</label> <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="actaConsulta" value="SI" disabled="">
+                                    <input class="form-check-input" type="radio" name="actaConsulta" value="SI"
+                                        disabled="">
                                     <label class="form-check-label">Si</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="actaConsulta" value="NO" disabled="">
+                                    <input class="form-check-input" type="radio" name="actaConsulta" value="NO"
+                                        disabled="">
                                     <label class="form-check-label">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="actaConsulta" value="NO APLICA" disabled="">
+                                    <input class="form-check-input" type="radio" name="actaConsulta" value="NO APLICA"
+                                        disabled="">
                                     <label class="form-check-label">No Aplica</label>
                                 </div>
                             </div>
@@ -2377,45 +2608,53 @@
                                 <label class="form-check-label">8.- Constancia de Separación de cargo publico</label>
                                 <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="consultaSep" value="SI" disabled="">
+                                    <input class="form-check-input" type="radio" name="consultaSep" value="SI"
+                                        disabled="">
                                     <label class="form-check-label">Si</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="consultaSep" value="NO" disabled="">
+                                    <input class="form-check-input" type="radio" name="consultaSep" value="NO"
+                                        disabled="">
                                     <label class="form-check-label">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="consultaSep" value="NO APLICA" disabled="">
+                                    <input class="form-check-input" type="radio" name="consultaSep" value="NO APLICA"
+                                        disabled="">
                                     <label class="form-check-label">No Aplica</label>
                                 </div>
                             </div>
                             <div class="form-check disabled">
-                                <input class="form-check-input" type="checkbox" id="doc-8" value="option3" checked disabled>
+                                <input class="form-check-input" type="checkbox" id="doc-8" value="option3" checked
+                                    disabled>
                                 <label class="form-check-label" for="doc-9">
                                     9.- Escrito bajo protesta de decir verdad que no se encuentra inhabilitado parqa
                                     ocupar un cargo público y que no se cuenta con antecedentes penales.
                                 </label>
                             </div>
                             <div class="form-check disabled">
-                                <input class="form-check-input" type="checkbox" id="doc-9" value="option3" checked disabled>
+                                <input class="form-check-input" type="checkbox" id="doc-9" value="option3" checked
+                                    disabled>
                                 <label class="form-check-label" for="doc-9">
                                     10.- Carta de no antecedentes penales.
                                 </label>
                             </div>
                             <div class="form-check disabled">
-                                <input class="form-check-input" type="checkbox" id="doc-10" value="option3" checked disabled>
+                                <input class="form-check-input" type="checkbox" id="doc-10" value="option3" checked
+                                    disabled>
                                 <label class="form-check-label" for="doc-8">
                                     11.- Manifestación de partido político.
                                 </label>
                             </div>
                             <div class="form-check disabled">
-                                <input class="form-check-input" type="checkbox" id="doc-11" value="option3" checked disabled>
+                                <input class="form-check-input" type="checkbox" id="doc-11" value="option3" checked
+                                    disabled>
                                 <label class="form-check-label" for="doc-10">
                                     12.- Informe de capacidad económica.
                                 </label>
                             </div>
                             <div class="form-check disabled">
-                                <input class="form-check-input" type="checkbox" id="doc-12" value="option3" checked disabled>
+                                <input class="form-check-input" type="checkbox" id="doc-12" value="option3" checked
+                                    disabled>
                                 <label class="form-check-label" for="doc-11">
                                     13.- Cédula de identificación fiscal.
                                 </label>
@@ -2425,7 +2664,8 @@
                             <!-- INICIO DE CAMBIOS DE ULTIMA HORA-->
 
                             <div class="form-check disabled">
-                                <input class="form-check-input" type="checkbox" id="doc-carta-3-info" value="option3" disabled>
+                                <input class="form-check-input" type="checkbox" id="doc-carta-3-info" value="option3"
+                                    disabled>
                                 <label class="form-check-label" for="doc-4">
                                     14.- CARTA 3 DE 3.
                                 </label>
@@ -2433,15 +2673,18 @@
                             <div class="form-check disabled">
                                 <label class="form-check-label">15.- CARTA REELECCIÓN</label> <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="cartaEleccion-info" value="SI" disabled="">
+                                    <input class="form-check-input" type="radio" name="cartaEleccion-info" value="SI"
+                                        disabled="">
                                     <label class="form-check-label">Si</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="cartaEleccion-info" value="NO" disabled="">
+                                    <input class="form-check-input" type="radio" name="cartaEleccion-info" value="NO"
+                                        disabled="">
                                     <label class="form-check-label">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="cartaEleccion-info" value="NO APLICA" disabled="">
+                                    <input class="form-check-input" type="radio" name="cartaEleccion-info"
+                                        value="NO APLICA" disabled="">
                                     <label class="form-check-label">No Aplica</label>
                                 </div>
                             </div>
@@ -2450,15 +2693,18 @@
                                 <label class="form-check-label">16.- CONSTANCIA DE AUTORIZACIÓN DEL ÓRGANO PARTIDISTA EN
                                     CASO DE RELECCIÓN</label> <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-info" value="SI" disabled="">
+                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-info"
+                                        value="SI" disabled="">
                                     <label class="form-check-label">Si</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-info" value="NO" disabled="">
+                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-info"
+                                        value="NO" disabled="">
                                     <label class="form-check-label">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-info" value="NO APLICA" disabled="">
+                                    <input class="form-check-input" type="radio" name="constAutOrganoPartidista-info"
+                                        value="NO APLICA" disabled="">
                                     <label class="form-check-label">No Aplica</label>
                                 </div>
                             </div>
@@ -2467,15 +2713,18 @@
                                 <label class="form-check-label">17.- MANIFESTACIÓN DE AUTOADSCRIPCIÓN INDÍGENA</label>
                                 <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-info" value="SI" disabled="">
+                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-info"
+                                        value="SI" disabled="">
                                     <label class="form-check-label">Si</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-info" value="NO" disabled="">
+                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-info"
+                                        value="NO" disabled="">
                                     <label class="form-check-label">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-info" value="NO APLICA" disabled="">
+                                    <input class="form-check-input" type="radio" name="manifestacionIndigena-info"
+                                        value="NO APLICA" disabled="">
                                     <label class="form-check-label">No Aplica</label>
                                 </div>
                             </div>
@@ -2484,15 +2733,18 @@
                                 <label class="form-check-label">18.- CONSTANCIAS QUE ACREDITEN EL VÍNCULO
                                     COMUNITARIO</label> <br>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="consVinculoComuni-info" value="SI" disabled="">
+                                    <input class="form-check-input" type="radio" name="consVinculoComuni-info"
+                                        value="SI" disabled="">
                                     <label class="form-check-label">Si</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="consVinculoComuni-info" value="NO" disabled="">
+                                    <input class="form-check-input" type="radio" name="consVinculoComuni-info"
+                                        value="NO" disabled="">
                                     <label class="form-check-label">No</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="consVinculoComuni-info" value="NO APLICA" disabled="">
+                                    <input class="form-check-input" type="radio" name="consVinculoComuni-info"
+                                        value="NO APLICA" disabled="">
                                     <label class="form-check-label">No Aplica</label>
                                 </div>
                             </div>
@@ -2534,7 +2786,8 @@
     <script type="text/javascript" src="assets/js/jquery/datatables.min.js"></script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/node-uuid/1.4.7/uuid.min.js"></script>
 
@@ -2542,80 +2795,80 @@
     <script src="assets/js/sweetalert/sweetalert.min.js"></script>
     <!-- -->
     <script>
-        function restriccion(e) {
+    function restriccion(e) {
 
-            key = e.keyCode || e.which;
-            tecla = String.fromCharCode(key).toLowerCase();
-            letras = " abcdefghijklmnopqrstuvwxyz0123456789";
-            especiales = "8-37-39-46";
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key).toLowerCase();
+        letras = " abcdefghijklmnopqrstuvwxyz0123456789";
+        especiales = "8-37-39-46";
 
-            tecla_especial = false
-            for (var i in especiales) {
-                if (key == especiales[i]) {
-                    tecla_especial = true;
-                    break;
-                }
-            }
-
-            if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-                return false;
+        tecla_especial = false
+        for (var i in especiales) {
+            if (key == especiales[i]) {
+                tecla_especial = true;
+                break;
             }
         }
 
-        function restriccionNombre(e) {
-            key = e.keyCode || e.which;
-            tecla = String.fromCharCode(key).toLowerCase();
-            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz.";
-            especiales = "8-37-39-46";
+        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+            return false;
+        }
+    }
 
-            tecla_especial = false
-            for (var i in especiales) {
-                if (key == especiales[i]) {
-                    tecla_especial = true;
-                    break;
-                }
-            }
+    function restriccionNombre(e) {
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key).toLowerCase();
+        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz.";
+        especiales = "8-37-39-46";
 
-            if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-                return false;
+        tecla_especial = false
+        for (var i in especiales) {
+            if (key == especiales[i]) {
+                tecla_especial = true;
+                break;
             }
         }
 
-        function restriccionTime(e) {
-            letras = " 0123456789";
-            especiales = "8-37-39-46";
-            key = e.keyCode || e.which;
-            tecla = String.fromCharCode(key).toLowerCase();
+        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+            return false;
+        }
+    }
 
-            let numero = e.srcElement.value;
+    function restriccionTime(e) {
+        letras = " 0123456789";
+        especiales = "8-37-39-46";
+        key = e.keyCode || e.which;
+        tecla = String.fromCharCode(key).toLowerCase();
 
-            if (letras.indexOf(tecla)) {
-                numero += tecla;
-                if (numero > 70) {
-                    e.srcElement.value = 70;
-                }
+        let numero = e.srcElement.value;
+
+        if (letras.indexOf(tecla)) {
+            numero += tecla;
+            if (numero > 70) {
+                e.srcElement.value = 70;
             }
-
-
-            tecla_especial = false
-            for (var i in especiales) {
-                if (key == especiales[i]) {
-                    tecla_especial = true;
-                    break;
-                }
-            }
-
-            if (letras.indexOf(tecla) == -1 && !tecla_especial) {
-                return false;
-            }
-
         }
 
-        function checkLength(el) {
-            if (el.value.length != 18) {
-                swal("Error", "La clave de elector debe contener 18 dígitos", "error");
+
+        tecla_especial = false
+        for (var i in especiales) {
+            if (key == especiales[i]) {
+                tecla_especial = true;
+                break;
             }
-        };
+        }
+
+        if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+            return false;
+        }
+
+    }
+
+    function checkLength(el) {
+        if (el.value.length != 18) {
+            swal("Error", "La clave de elector debe contener 18 dígitos", "error");
+        }
+    };
     </script>
     <!-- funcionamiento general -->
     <script src='assets/js/constantes.js'></script>
